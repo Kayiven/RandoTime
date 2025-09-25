@@ -1,0 +1,186 @@
+/* Bannier Du Debut */
+.hero {
+ display: flex;
+ position: relative;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ background: url('../../Asset/Catagories/Contact.jpg') center/cover no-repeat;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ color: #fff;
+ height: 450px;
+}
+.hero::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.5);
+ z-index: 1;
+}
+
+/* Bannier Debut Txt */
+.hero h1,
+.hero p {
+ position: relative;
+ z-index: 2;
+}
+.hero h1 {
+ font-size: 2.5rem;
+ margin-bottom: 15px;
+}
+.hero p {
+ font-size: 1.2rem;
+}
+
+/* Contact nous */
+.contact-page {
+ max-width: 1000px;
+ margin: auto;
+ padding: 0px 20px;
+ margin-top: 195px;
+}
+.map-container iframe {
+ width: 100%;
+ height: 300px;
+ border: none;
+ border-radius: 10px;
+ margin-bottom: 30px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.contact-form {
+ flex: 1 1 65%;
+ background: #fff;
+ padding: 30px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+.contact-form button {
+ background: #004A7E;
+ color: white;
+ padding: 12px 20px;
+ border: none;
+ border-radius: 6px;
+ font-size: 16px;
+ cursor: pointer;
+ margin-top: 20px;
+ width: 100%;
+}
+
+/* Contact nous Form , txt */
+.contact-wrapper {
+ display: flex;
+ gap: 30px;
+ align-items: flex-start;
+}
+.contact-form .form-row {
+ display: flex;
+ gap: 15px;
+ margin-bottom: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+ width: 95.6%;
+ padding: 12px;
+ border: 1px solid #ccc;
+ border-radius: 6px;
+ font-size: 16px;
+ outline: none;
+ transition: 0.3s;
+}
+.contact-form h2 {
+ margin-bottom: 30px;
+ text-align: center;
+ margin-bottom: 50px;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.contact-form textarea {
+ margin-top: 10px;
+}
+.contact-form textarea {
+ resize: none;
+}
+.contact-form button:hover {
+ background: #669c24;
+ opacity: 0.9;
+ transition: 1s;
+ transform:scale(1.01);
+}
+
+/* Coordonnées Config */
+.contact-right {
+ flex: 1 1 35%;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+.contact-details,
+.social-box {
+ font-family: Arial, Helvetica, sans-serif;
+ height: 181px;
+ padding: 20px;
+ border-radius: 5px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+
+}
+.social-btn {
+ display: flex;
+ text-decoration: none;
+ font-size: 16px;
+ font-weight: bold;
+ padding: 6px 24px;
+ border-radius: 6px;
+ margin: 7px 0;
+ transition: 0.2s;
+ width: 150px;
+}
+
+/* Coordonnées txt */
+.contact-details h2,
+.social-box h2 {
+ margin-left: 35PX;
+ margin-bottom: 10px;
+}
+.contact-details p {
+ margin-left: 29PX;
+ padding: 5px;
+}
+.contact-details a,
+.social-box a {
+ color: white;
+ text-decoration: none;
+}
+
+/* Coordonnées Color or hover */
+.facebook {
+ background: #004A7E;
+ margin-left: 36px;
+ margin-top: 20px;
+}
+.facebook:hover {
+ background: #025896;
+ margin-left: 42px;
+}
+.instagram {
+ background: #669c24;
+ margin-left: 36px;
+}
+.instagram:hover {
+ background: #79b82b;
+  margin-left: 42px;
+}
+.twitter {
+ background: #DC933C;
+ margin-left: 36px;
+}
+.twitter:hover {
+ background: #bc7e33;
+ margin-left: 42px;
+}
+
+/* Space */
+.space{
+  padding-bottom: 185px;
+}

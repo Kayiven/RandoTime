@@ -1,0 +1,6 @@
+-- Creation of Table Daily_quotes --
+CREATE TABLE IF NOT EXISTS Daily_quotes (
+id INT AUTO_INCREMENT PRIMARY KEY,
+texte TEXT NOT NULL,
+date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,80 @@
+/* Bannier Du Debut */
+.hero {
+ display: flex;
+ position: relative;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ background: url('../../Asset/Catagories/Adventure.jpg') center/cover no-repeat;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ color: #fff;
+ height: 450px;
+}
+.hero::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.5);
+ z-index: 1;
+}
+
+/* Bannier Debut Txt */
+.hero h1,
+.hero p {
+ position: relative;
+ z-index: 2;
+}
+.hero h1 {
+ font-size: 2.5rem;
+ margin-bottom: 15px;
+}
+.hero p {
+ font-size: 1.2rem;
+}
+
+/* FAQ Structre */
+.container-quest {
+ font-family: Arial, Helvetica, sans-serif;
+ margin-top: 60px;
+ padding-left: 33%;
+}
+.sp-green {
+ color: #669c24;
+ font-style: bold;
+}
+
+/* FAQ Structre Txt */
+.question-title {
+ color: #004A7E;
+ font-size: 24px;
+ width: 700px;
+ border-radius: 5px;
+}
+.title-question3 {
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ margin-left: 39.4%;
+ margin-bottom: 100px;
+ margin-top: 120px;
+}
+.title-Conseils3 {
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ margin-left: 39.4%;
+ margin-bottom: 110px;
+ margin-top: 110px;
+}
+.question-decription {
+ margin-top: 20px;
+ font-size: 16px;
+}
+.question-title:hover{
+ color: #025896;
+ margin-left: 10px;
+}
+
+/* Space */
+.space {
+ padding-bottom: 179px;
+}

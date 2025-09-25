@@ -1,0 +1,380 @@
+/* Search::FilterFlex*/
+.search-container {
+ position: absolute;
+ width: 1335px;
+ margin: 10px 13.1%;
+ z-index: 10;
+ top: 65%;
+ padding: 25px;
+ background: white;
+ border-radius: 10px;
+ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.person-box {
+ position: absolute;
+ top: 121%;
+ left: 0;
+ background: #ffffff;
+ padding: 15px;
+ border: 1px solid #ccc;
+ border-radius: 8px;
+ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ z-index: 100;
+ width: 221px;
+}
+.person-close {
+ margin-bottom: 15px;
+ margin-left: 194px;
+ border-radius: 5px;
+ background: rgb(243, 240, 240);
+ border: 1px solid #252424ad;
+ height: 23px;
+}
+
+/* Search::Tabs */
+.search-tabs {
+ display: flex;
+ gap: 13px;
+ margin-bottom: 20px;
+ flex-wrap: wrap;
+}
+.tab {
+ border: none;
+ background: none;
+ font-size: 18px;
+ padding: 8PX 0px;
+ cursor: pointer;
+ font-weight: bold;
+ border-bottom: 2px solid transparent;
+}
+.search-fields {
+ display: grid;
+ grid-template-columns: 4fr 1.65fr 1.65fr 2fr;
+ align-items: center;
+ gap: 30px;
+ padding-bottom: 30px;
+}
+.field-group label {
+ font-size: 13px;
+ font-weight: bold;
+ margin-bottom: 5px;
+ color: #004A7E;
+}
+
+/* Search::Inputs */
+.search-fields input,
+.search-fields select {
+ width: 100%;
+ height: 100%;
+ padding: 10px;
+ font-size: 14px;
+ border: 1px solid #ccc;
+ border-radius: 6px;
+ box-sizing: border-box;
+ background-color: white;
+ outline: none;
+ appearance: none;
+ -webkit-appearance: none;
+ -moz-appearance: none;
+}
+.counter button {
+ width: 25px;
+ height: 25px;
+ font-weight: bold;
+ border-radius: 50%;
+ border: 1px solid #252424ad;
+ background: rgb(243, 240, 240);
+ cursor: pointer;
+}
+.search-btn {
+ position: absolute;
+ font-size: 17px;
+ width: 480px;
+ height: 50px;
+ color: white;
+ border: none;
+ border-radius: 6px;
+ font-weight: bold;
+ background: #669c24;
+ padding: 13px 0px;
+ cursor: pointer;
+ transition: 0.3s;
+ margin-left: 31.5%;
+ margin-top: 190px;
+}
+.search-person-btn {
+ width: 100%;
+ padding: 10px;
+ border: 1px solid #ccc;
+ border-radius: 6px;
+ font-size: 14px;
+ background-color: white;
+ cursor: pointer;
+ text-align: left;
+}
+.counter {
+ display: inline-flex;
+ align-items: center;
+ gap: 79px;
+ margin-left: 1.1px;
+ margin-top: 15px;
+ margin-bottom: 15px;
+}
+
+/* Hover::Groups */
+.search-btn:hover {
+ opacity: 0.9;
+ transform: scale(1.01);
+}
+.person-select {
+ position: relative;
+}
+.tab.active {
+ color: #004A7E;
+ border-color: #669c24;
+}
+.person-box {
+ display: none;
+}
+.field-group {
+ display: flex;
+ flex-direction: column;
+}
+.counter span {
+ min-width: 10px;
+ text-align: center;
+ display: inline-block;
+}
+
+/* information Flex */
+.simple-features {
+ display: flex;
+ justify-content: center;
+ gap: 20px;
+ flex-wrap: wrap;
+ margin-top: 15%;
+ margin-left: 6px;
+}
+.simple-box img {
+ width: 42px;
+ height: 42px;
+ margin-bottom: 15px;
+}
+.simple-box {
+ width: 227px;
+ text-align: center;
+ padding: 22px;
+ margin-top: 50px;
+ border-radius: 6px;
+ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.simple-box:hover{
+ transform:rotate(-5deg)
+}
+
+/* Information Txt */
+.simple-box h4 {
+ margin: 15px 0;
+ font-size: 14px;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.simple-box p {
+ font-size: 13px;
+ color: #333;
+ font-family: Arial, Helvetica, sans-serif;
+ margin-bottom: 15px;
+}
+
+/* Catagories Cards Preview */
+.slider-section {
+ max-width: 1682px !important;
+ margin-left: 5.6% !important;
+ font-family: Arial, sans-serif;
+ padding: 0 10px;
+}
+.slider-section {
+ display: flex;
+ gap: 20px !important;
+ flex-wrap: nowrap;
+ padding-bottom: 10px;
+}
+.card {
+ flex: 1 0 230.1px;
+ background: #f3f3f4;
+ border-radius: 8px;
+ padding: 10px;
+ box-sizing: border-box;
+ display: flex;
+ flex-direction: column;
+}
+
+/* Catagories Card Txt */
+.top {
+ color: #252424;
+ margin-left: 5.6%;
+ padding-top: 193px;
+ margin-bottom: 50px;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.Description-1 {
+ max-width: 270px;
+ font-size: 13px;
+ color: #333;
+ margin-bottom: 15px;
+ line-height: 1.5;
+ flex-grow: 1;
+}
+.sub-title {
+ margin: 8px 0;
+ font-size: 20px;
+ margin-bottom: 15px;
+}
+
+/* Catagories Controle */
+.card img {
+ width: 100%;
+ height: 200px;
+ object-fit: cover;
+ border-radius: 6px;
+ margin-bottom: 12px;
+ flex-shrink: 0;
+}
+.card {
+ position: relative;
+ overflow: hidden;
+ transform-style: preserve-3d;
+ backface-visibility: hidden;
+ cursor: pointer;
+ transition: transform 0.3s ease;
+ will-change: transform;
+}
+.card.flipped {
+ animation: flipCard 0.8s forwards;
+}
+.slider-section {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ font-family: Arial, sans-serif;
+ gap: 20px;
+ max-width: 1665px;
+ margin-left: 6%;
+ padding: 22px 0;
+}
+
+/* Catagories Stars */
+.stars {
+ display: flex;
+ gap: 4px;
+ margin-bottom: 8px;
+}
+.stars svg {
+ width: 20px;
+ height: 20px;
+ fill: rgb(240, 129, 31) !important;
+}
+
+/* Badage Promotion */
+.price {
+ color: #669c24;
+ font-family: Arial, Helvetica, sans-serif;
+ margin-top: 10px;
+ margin-bottom: 20px;
+ font-style: bold;
+ font-size: 18px;
+}
+.old-price {
+ text-decoration: line-through;
+ color: #999;
+ font-size: 16px;
+ margin-right: 8px;
+}
+.new-price {
+ color: #669c24;
+ font-size: 18px;
+ font-weight: bold;
+}
+.discount-badge {
+ position: absolute;
+ top: 12px;
+ left: 184px;
+ background-color: #e63946;
+ color: #fff;
+ font-size: 14px;
+ font-weight: bold;
+ padding: 8px 40px;
+ text-align: center;
+ transform: rotate(45deg);
+ box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+ z-index: 10;
+}
+
+/*  KeyFrame Animation */
+@keyframes flipCard {
+ 0% {
+  transform: rotateY(50deg) translateZ(0);
+ }
+ 50% {
+  transform: rotateY(90deg) translateZ(0);
+ }
+ 100% {
+  transform: rotateY(0deg) translateZ(0);
+ }
+}
+
+/* Partenair Side */
+.slider-container {
+ max-width: 730px;
+ margin-left: 32.25%;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ margin-top: 40px;
+}
+.logos-track img {
+ width: 100px;
+ height: 110px;
+ object-fit: cover;
+ flex-shrink: 0;
+ transition: transform 0.5s;
+}
+.btn {
+ background-color: #004A7E;
+ color: white;
+ border: none;
+ font-size: 25px;
+ padding: 10px 12px;
+ border-radius: 5px;
+ cursor: pointer;
+}
+
+/* Patenair Logos */
+.logos-view {
+ overflow: hidden;
+ width: 100%;
+}
+.logos-track {
+ display: flex;
+ transition: transform 0.5s ease-in-out;
+ gap: 30px;
+}
+.logos-track img:hover {
+ transform: scale(1.2);
+}
+
+/* Partenair Txt */
+.titre_partenair {
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ margin-left: 40.2%;
+ margin-top: 100px;
+ padding: 50px;
+ font-size: 27px;
+ color: #333;
+ font-weight: bold;
+}
+
+/* Space */
+.space {
+ padding-bottom: 216px;
+}

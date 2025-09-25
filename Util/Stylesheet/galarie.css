@@ -1,0 +1,219 @@
+/* Bannier Du Debut */
+.hero {
+ display: flex;
+ position: relative;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ background: url('../../Asset/Catagories/Adventure.jpg') center/cover no-repeat;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ color: #fff;
+ height: 450px;
+}
+.hero::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.5);
+ z-index: 1;
+}
+
+/* Bannier Debut Txt */
+.hero h1,
+.hero p {
+ position: relative;
+ z-index: 2;
+}
+.hero h1 {
+ font-size: 2.5rem;
+ margin-bottom: 15px;
+}
+.hero p {
+ font-size: 1.2rem;
+}
+
+/* Galarie Picture */
+.gallery {
+ padding: 100px;
+ margin-left: 8.7px;
+ margin-top: 40PX;
+ max-width: 1679px;
+}
+.gallery-container {
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 20px;
+}
+.gallery-item img {
+ width: 100%;
+ height: 200px;
+ object-fit: cover;
+ display: block;
+}
+.gallery-item .overlay {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ background: rgba(0, 0, 0, 0.6);
+ color: white;
+ padding: 10px;
+ text-align: center;
+ font-weight: bold;
+ opacity: 0;
+ transition: opacity 0.3s;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.gallery-item {
+ position: relative;
+ border-radius: 12px;
+ overflow: hidden;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ transition: transform 0.3s;
+}
+
+/* Galarie Txt, Hover */
+.gallery h2 {
+ margin-bottom: 20px;
+ font-size: 2rem;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ margin-top: 50px;
+ margin-bottom: 60px;
+}
+.gallery-item:hover {
+ transform: scale(1.03);
+}
+.gallery-item:hover .overlay {
+ opacity: 1;
+}
+
+/* Quotes Section */
+.quote-section {
+ background: #f0fdfc;
+ padding: 40px 20px;
+ margin: 50px auto;
+ border-left: 5px solid #00497e;
+ max-width: 800px;
+ border-radius: 10px;
+}
+.quote-section blockquote {
+ font-style: italic;
+ font-size: 20px;
+ color: #004A7E;
+ text-align: center;
+ margin: 0;
+ line-height: 1.6;
+}
+
+/* Galarie Activité */
+.gallery2 {
+ padding: 100px;
+ margin-left: 8.7px;
+ margin-top: 30PX;
+ max-width: 1679px;
+}
+.gallery-container2 {
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 20px;
+}
+.gallery-item2 img {
+ width: 100%;
+ height: 200px;
+ object-fit: cover;
+ display: block;
+}
+.gallery-item2 .overlay2 {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ background: rgba(0, 0, 0, 0.6);
+ color: white;
+ padding: 10px;
+ text-align: center;
+ font-weight: bold;
+ opacity: 0;
+ transition: opacity 0.3s;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.gallery-item2 {
+ position: relative;
+ border-radius: 12px;
+ overflow: hidden;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ transition: transform 0.3s;
+}
+
+/* Galarie Txt, Hover */
+.gallery2 h2 {
+ margin-bottom: 30px;
+ font-size: 2rem;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ margin-top: 1px;
+ margin-bottom: 60px;
+}
+.gallery-item2:hover {
+ transform: scale(1.03);
+}
+.gallery-item2:hover .overlay2 {
+ opacity: 1;
+}
+
+/* Avis participants */
+.testimonials {
+ padding: 50px 20px;
+ text-align: center;
+}
+.testimonial-container {
+ display: grid;
+ grid-template-columns: repeat(5, 1fr);
+ gap: 20px;
+ max-width: 1200PX;
+ margin-left: 300px;
+}
+.testimonial {
+ background: #fff;
+ padding: 15px;
+ border-radius: 12px;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ transition: transform 0.3s;
+}
+.testimonial img {
+ width: 80px;
+ height: 80px;
+ border-radius: 50%;
+ object-fit: cover;
+ margin-bottom: 10px;
+}
+
+/* Avis participants Txt */
+.testimonial h4 {
+ margin-bottom: 13Px;
+ margin-top: 10px;
+ color: #004A7E;
+ font-size: 16px;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.testimonial p {
+ font-size: 13px;
+ color: #555;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.testimonials h2 {
+ margin-top: 30px;
+ margin-bottom: 130px;
+ font-size: 2rem;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.testimonial:hover {
+ transform: translateY(-5px);
+}
+
+/* Space */
+.space {
+ padding-bottom: 210px;
+}
