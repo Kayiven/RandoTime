@@ -45,6 +45,6 @@ unset($_SESSION['old_username']);
 $_SESSION['user_nom'] = $user['nom'];
 $_SESSION['user_email'] = $user['email'];
 
-header('Location: ../../Views/Seassion/Inscrit/work.php');
+header('Location: ../../Views/Seassion/Inscrit/Acceuil-1.php');
 exit;
 }?>

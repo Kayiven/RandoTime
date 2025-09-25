@@ -10,16 +10,12 @@
 <link href="../../../Util/Stylesheet/navbar.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/footer.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/global.css" rel="stylesheet">
-<link href="../../../Util/Stylesheet/contact.css" rel="stylesheet">
+<link href="../../../Util/Stylesheet/evenements.css" rel="stylesheet">
 </HEAD>
 
 <BODY>
 <!-- Rappler le taskbar dans Acceuil -->
 <?php require '../../Componet/navbar/navbar_v1.php';?>
-
-
-<!-- Evenements -->
-
 
 
 
