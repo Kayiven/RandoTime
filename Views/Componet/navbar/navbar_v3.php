@@ -24,8 +24,10 @@
 <li><a href="../../Seassion/Invité/Faq.php">FAQ</a></li></ul></div>
 <!-- Navbar::options -->
 <div class="seasion-options" id="seasion-op">
-<li><?php echo htmlspecialchars($_SESSION['nom']); ?></li>
-<li><?php echo htmlspecialchars($_SESSION['email']); ?></li>
-<li><a href="#">parametre</a></li>
-<li><a href="#">Disconnect</a></li>
-</div>
+<li class="seasion_email"><?php echo htmlspecialchars($_SESSION['email']); ?></li>
+<li class="seasion_pic">
+<img src="<?php echo htmlspecialchars($_SESSION['profile_image']); ?>" 
+alt="Profile Picture" class="seasion-pic"></li>
+<li class="seasion_nom">Welcome, <?php echo htmlspecialchars($_SESSION['nom']); ?> !</li>
+<li><input type="submit" value="Parametre" class="li-txt1"></li>
+<li><input type="submit" value="Disconnect" class="li-txt2"></li></div>
