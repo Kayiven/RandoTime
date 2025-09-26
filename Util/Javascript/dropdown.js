@@ -1,22 +1,3 @@
-// Dropdown On click
-function more(){
-//Calling the target from id
-const box = document.getElementById("box-flexplus");
-const textTrigger = document.getElementById("More");
-//Show the box invisible
-textTrigger.addEventListener("click", function (event) {
-box.style.display = "flex";
-event.stopPropagation(); 
-});
-// Keep open same box invisible when click inside
-box.addEventListener("click", function (event) {
-event.stopPropagation();
-});
-// Close Box invisible when click outiside
-document.addEventListener("click", function () {
-box.style.display = "none";
-});
-}
 
 // Custom selector Extension
 document.querySelectorAll('.custom-select').forEach(select => {
@@ -50,22 +31,37 @@ document.addEventListener('click', e => {
 if (!select.contains(e.target)) options.style.display = 'none';
 }); });
 
-// Dropdown On click
-function compte3(){
-//Calling the target from id
-const box3 = document.getElementById("seasion-op");
-const compteTrigger = document.getElementById("seasion-compte3");
-//Show the box invisible
-compteTrigger.addEventListener("click", function (event) {
-box3.style.display = "block";
-event.stopPropagation(); 
+// collect your dropdowns
+const dropdowns = [
+{ trigger: "seasion-compte3", box: "seasion-op" },
+{ trigger: "More", box: "box-flexplus" }];
+
+// function to close all dropdowns
+function closeAll(except = null) {
+dropdowns.forEach(d => {
+const box = document.getElementById(d.box);
+if (box && box !== except) box.style.display = "none";
+});}
+
+// setup dropdowns
+dropdowns.forEach(d => {
+const trigger = document.getElementById(d.trigger);
+const box = document.getElementById(d.box);
+if (!trigger || !box) return;
+
+// click trigger → toggle its box
+trigger.onclick = function(e) {
+e.stopPropagation();
+if (box.style.display === "block") {
+box.style.display = "none";
+} else {
+closeAll(box); // close others
+box.style.display = "block";
+}};
+
+// click inside box → don’t close
+box.onclick = function(e) { e.stopPropagation(); }
 });
-// Keep open same box invisible when click inside
-box3.addEventListener("click", function (event) {
-event.stopPropagation();
-});
-// Close Box invisible when click outiside
-document.addEventListener("click", function () {
-box3.style.display = "none";
-});
-}
+
+// click outside → close all
+document.onclick = function() { closeAll(); }
