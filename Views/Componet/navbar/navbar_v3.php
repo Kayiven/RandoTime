@@ -16,7 +16,7 @@
 <div class="suggestions" id="suggestions"></div>
 <li><img src="../../../Asset/FlexIcons/mode.png" class="profile-img"></li>
 <li><img src="../../../Asset/FlexIcons/notification.png" class="notification_icon"></li>
-<li><img src="../../../Asset/FlexIcons/profile_user.png" class="profile-img"></ul></div>
+<li><img src="../../../Asset/FlexIcons/profile_user.png" class="profile-img"  onclick="compte3()" id="seasion-compte3"></ul></div>
 <!-- Navbar::Flexplus -->
 <div class="box-flexplus" id="box-flexplus">
 <ul class="list-v001">
@@ -27,7 +27,7 @@
 <li class="seasion_email"><?php echo htmlspecialchars($_SESSION['email']); ?></li>
 <li class="seasion_pic">
 <img src="<?php echo htmlspecialchars($_SESSION['profile_image']); ?>" 
-alt="Profile Picture" class="seasion-pic"></li>
+alt="Profile Picture" class="seasion-pic" ></li>
 <li class="seasion_nom">Welcome, <?php echo htmlspecialchars($_SESSION['nom']); ?> !</li>
 <li><input type="submit" value="Parametre" class="li-txt1"></li>
 <li><input type="submit" value="Disconnect" class="li-txt2"></li></div>

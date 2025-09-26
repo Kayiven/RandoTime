@@ -160,6 +160,7 @@ font-size: 14px;
 }
 /* invisible: Login */
 .seasion-options{
+ display: none;
  position: absolute;
  background-color: #2b2a2a;
  border-bottom-right-radius: 5px;

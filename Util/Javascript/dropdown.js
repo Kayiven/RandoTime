@@ -49,3 +49,23 @@ fullEmailInput.value = emailInput.value + selected.dataset.value;
 document.addEventListener('click', e => {
 if (!select.contains(e.target)) options.style.display = 'none';
 }); });
+
+// Dropdown On click
+function compte3(){
+//Calling the target from id
+const box3 = document.getElementById("seasion-op");
+const compteTrigger = document.getElementById("seasion-compte3");
+//Show the box invisible
+compteTrigger.addEventListener("click", function (event) {
+box3.style.display = "block";
+event.stopPropagation(); 
+});
+// Keep open same box invisible when click inside
+box3.addEventListener("click", function (event) {
+event.stopPropagation();
+});
+// Close Box invisible when click outiside
+document.addEventListener("click", function () {
+box3.style.display = "none";
+});
+}
