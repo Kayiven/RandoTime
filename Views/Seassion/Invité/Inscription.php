@@ -1,4 +1,11 @@
-<?php session_start()?>
+<?php
+session_start();
+
+// Destroy session if user goes back to login/registration
+if (isset($_SESSION['id'])) {
+session_unset();
+session_destroy();
+}?>
 
 <!DOCTYPE HTML>
 <HTML lang="en">
@@ -60,15 +67,13 @@
 
 <div class="form-group">
 <label class="label">Password</label>
-<input type="password" name="register-password" placeholder="Sasir votre password (oubligatoir)" 
-pattern="^[A-Za-z0-9]{1,20}$" maxlength="20" required>
+<input type="password" name="register-password" placeholder="Sasir votre password (oubligatoir)">
 <div class="error-pwd"><?= isset($_SESSION['error-pwd']) ? htmlspecialchars($_SESSION['error-pwd']) : '' ?>
 </div></div>
 
 <div class="form-group ">
 <label class="label">Confirm Password</label>
-<input type="password" name="register-confirm-password" placeholder="Confirm you password (oubligatoir)" 
-pattern="^[A-Za-z0-9]{1,20}$" maxlength="20">
+<input type="password" name="register-confirm-password" placeholder="Confirm you password (oubligatoir)">
 <div class="error-pwd"><?= isset($_SESSION['error-pwd']) ? htmlspecialchars($_SESSION['error-pwd']) : '' ?>
 </div></div>
 

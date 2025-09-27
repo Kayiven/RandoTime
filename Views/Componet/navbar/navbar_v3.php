@@ -1,3 +1,13 @@
+<?php 
+// Start session only if not already started
+if (session_status() === PHP_SESSION_NONE) {
+session_start(); 
+}
+// Get user info from session
+$userName  = $_SESSION['user_nom']  ?? 'Invité';
+$userEmail = $_SESSION['user_email'] ?? '';
+?>
+
 <!-- Navbar::FlexNav -->
 <div class="navbar_v1">
 <img src="../../../Asset/FlexIcons/logo.svg" class="website_logo">
@@ -18,16 +28,17 @@
 <li><img src="../../../Asset/FlexIcons/notification.png" class="notification_icon"></li>
 <li><img src="../../../Asset/FlexIcons/profile_user.png" class="profile-img"  onclick="compte3()" id="seasion-compte3"></ul></div>
 <!-- Navbar::Flexplus -->
-<div class="box-flexplus" id="box-flexplus">
+<div class="box-flexplus2" id="box-flexplus">
 <ul class="list-v001">
 <li><a href="../../Seassion/Invité/Contact.php">Contact</a></li>
 <li><a href="../../Seassion/Invité/Faq.php">FAQ</a></li></ul></div>
 <!-- Navbar::options -->
+<form action="#" method="post">
 <div class="seasion-options" id="seasion-op">
 <li class="seasion_email"><?php echo htmlspecialchars($_SESSION['email']); ?></li>
 <li class="seasion_pic">
 <img src="<?php echo htmlspecialchars($_SESSION['profile_image']); ?>" 
 alt="Profile Picture" class="seasion-pic" ></li>
-<li class="seasion_nom">Welcome, <?php echo htmlspecialchars($_SESSION['nom']); ?> !</li>
-<li><input type="submit" value="Parametre" class="li-txt1"></li>
-<li><input type="submit" value="Disconnect" class="li-txt2"></li></div>
+<li class="seasion_nom">Welcome, <b><?php echo htmlspecialchars($_SESSION['nom']); ?><b> !</li>
+<li><input type="submit" value="Parametre" class="li-Parametre"></li>
+<li><input type="submit" value="Disconnect" class="li-Disconnect" formaction="../../../DataBase/Actions/disconnect-sys.php"></li></div></form>

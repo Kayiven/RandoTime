@@ -11,6 +11,6 @@ telephone VARCHAR(12) NOT NULL UNIQUE,
 gender VARCHAR(5) NOT NULL,
 role VARCHAR(20) NOT NULL DEFAULT 'Member',
 motpass VARCHAR(255) NOT NULL, -- mot de passe hashé
-profile_pic VARCHAR(255) NOT NULL DEFAULT '../../../Asset/FlexIcons/profile_user.png';,
+profile_pic VARCHAR(255) NOT NULL DEFAULT '../../../Asset/FlexIcons/profile_user.png',
 created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

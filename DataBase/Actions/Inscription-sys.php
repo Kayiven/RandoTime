@@ -1,11 +1,10 @@
-<?php
-session_start();
-require_once __DIR__ . '/../Configs/connection_db.php';
+<?php session_start();
 
+require_once __DIR__ . '/../Configs/connection_db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Inscription'])) {
 
-// Information personnelle
-$profile_pic = '../../assets/uploads/profile-default.jpg';
+// Recal name of field
+$profile_pic = '../../Asset/FlexIcons/profile_user.png';
 $role = 'Member';
 $gender = $_POST['gender'] ?? '';
 $nom = trim($_POST['register-nom'] ?? '');
@@ -19,9 +18,7 @@ $telephone = $phone_extension . $phone_number;
 $day =  $_POST['birth-day'];
 $month =  $_POST['birth-month'];
 $year =  $_POST['birth-year'];
-$date = sprintf('%04d-%02d-%02d', $year, $month, $day);
-
-      
+$date = sprintf('%04d-%02d-%02d', $year, $month, $day);      
 
 // Password verification
 if ($password !== $password_confirm) {
@@ -37,9 +34,15 @@ header("Location: ../../Views/Seassion/Invité/Inscription.php");
 exit;
 }
 
+if (strlen($password) !== 16) {
+$_SESSION['error-pwd'] = "Error > Le mot doit contenir 16 caractères.";
+header("Location: ../../Views/Seassion/Invité/Inscription.php");
+exit;
+}
+
 // Génération ID et token sécurisé
-$userId = bin2hex(random_bytes(4)); // 8 caractères
-$token  = bin2hex(random_bytes(16)); // 32 caractères
+$userId = bin2hex(random_bytes(8)); 
+$token  = bin2hex(random_bytes(16));
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
 // Vérification si email, nom, prénom ou téléphone existe déjà
@@ -65,10 +68,10 @@ $stmt = $pdo->prepare("INSERT INTO compte
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 if ($stmt->execute([$userId, $token, $nom, $prenom, $email, $date, $telephone, $gender, $role, $passwordHash, $profile_pic])) {
-$_SESSION['user_id'] = $userId;
+$_SESSION['id'] = $userId;
 $_SESSION['token'] = $token;
-$_SESSION['nom']     = $nom;
-$_SESSION['email']   = $email;
+$_SESSION['nom'] = $nom;
+$_SESSION['email'] = $email;
 session_regenerate_id(true);
 
 $_SESSION['success'] = "⭐ Your account has been created successfully!";
