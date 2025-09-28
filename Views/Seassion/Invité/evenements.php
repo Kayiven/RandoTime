@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="Description" content="width=device-width, initial-scale=1">
 <meta name="KeyWords" content="width=device-width, initial-scale=1">
-<title>Acceuil ( RT )</title>
+<title>Evenements</title>
 <link href="../../../Util/Stylesheet/navbar.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/footer.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/global.css" rel="stylesheet">
@@ -16,8 +16,6 @@
 <BODY>
 <!-- Rappler le taskbar dans Acceuil -->
 <?php require '../../Componet/navbar/navbar_v1.php';?>
-
-
 
 <!-- Footer -->
 <footer class="footer">

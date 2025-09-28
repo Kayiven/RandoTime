@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="Description" content="width=device-width, initial-scale=1">
 <meta name="KeyWords" content="width=device-width, initial-scale=1">
-<title>Acceuil ( RT )</title>
+<title>Apropos</title>
 <link href="../../../Util/Stylesheet/navbar.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/footer.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/global.css" rel="stylesheet">
@@ -126,6 +126,7 @@ error_log("⚠️ Stats query failed: " . $e->getMessage()); }}?>
 <section class="team">
 <h2>Notre Equipe</h2>
 <div class="team-container">
+ 
 <!-- Ligne Devs -->
 <div class="team-row">
 <div class="member">
@@ -145,6 +146,7 @@ error_log("⚠️ Stats query failed: " . $e->getMessage()); }}?>
 <h4>Amine lakhnech</h4>
 <p>Back-end Developer</p>
 </div></div>
+
 <!-- Ligne UI/Desgin -->
 <div class="team-row">
 <div class="member">

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="Description" content="width=device-width, initial-scale=1">
 <meta name="KeyWords" content="width=device-width, initial-scale=1">
-<title>Acceuil ( RT )</title>
+<title>contact</title>
 <link href="../../../Util/Stylesheet/navbar.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/footer.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/global.css" rel="stylesheet">
@@ -29,22 +29,22 @@
 <div class="map-container">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.7861098765174!2d10.181533!3d36.806495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1302e5b768b29055%3A0x7e5f0f3fa4dc6f66!2sTunis%2C%20Tunisie!5e0!3m2!1sfr!2stn!4v1711822500000!5m2!1sfr!2stn"  
 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+
+<!-- form Contact -->
 <div class="contact-wrapper">
 <div class="contact-form">
 <h2>Contactez-nous</h2>
 <form action="send_contact.php" method="POST">
 <div class="form-row">
 <input type="text" name="nom" placeholder="Votre nom" required>
-<input type="email" name="email" placeholder="Votre email" required>
-</div>
+<input type="email" name="email" placeholder="Votre email" required></div>
 <div class="form-row">
 <input type="text" name="sujet" placeholder="Sujet" required>
-<input type="text" name="telephone" placeholder="Téléphone (optionnel)">
-</div>
+<input type="text" name="telephone" placeholder="Téléphone (optionnel)"></div>
 <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
-<button type="submit">Envoyer</button>
-</form></div>
+<button type="submit">Envoyer</button></form></div>
 <div class="contact-right">
+
 <!-- Coordonnées -->
 <div class="contact-details">
 <h2>Nos coordonnées</h2>
@@ -52,6 +52,7 @@ allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></
 <p>📧 Rando@gmail.com</p>
 <p>📞 +216 22 555 444</p>
 </div>
+
 <!-- Social -->
 <div class="social-box">
 <h2>Nos SocialMedia</h2>

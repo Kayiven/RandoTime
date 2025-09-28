@@ -15,7 +15,7 @@ session_destroy();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="Description" content="width=device-width, initial-scale=1">
 <meta name="KeyWords" content="width=device-width, initial-scale=1">
-<title>Acceuil ( RT )</title>
+<title>Login</title>
 <link href="../../../Util/Stylesheet/navbar.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/footer.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/global.css" rel="stylesheet">

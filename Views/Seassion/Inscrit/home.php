@@ -30,7 +30,7 @@ $_SESSION['profile_image'] = (!empty($user['profile_pic']) && file_exists($user[
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="Description" content="width=device-width, initial-scale=1">
 <meta name="KeyWords" content="width=device-width, initial-scale=1">
-<title>Acceuil-Connect</title>
+<title>Acceuil</title>
 <link href="../../../Util/Stylesheet/navbar.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/footer.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/global.css" rel="stylesheet">
@@ -38,6 +38,7 @@ $_SESSION['profile_image'] = (!empty($user['profile_pic']) && file_exists($user[
 <link href="../../../Util/Stylesheet/acceuil.css" rel="stylesheet">
 </HEAD>
 
+<BODY>
 <!-- Rappler le taskbar dans Acceuil -->
 <?php require '../../Componet/navbar/navbar_v3.php';?>
 
@@ -359,6 +360,7 @@ Réservez, partez et vivez l’aventure !</p></div>
 <script src="../../../Util/Javascript/dropdown.js"></script>
 <script src="../../../Util/Javascript/sliders-v2.js"></script>
 <script src="../../../Util/Javascript/animation.js"></script>
+<script src="../../../Util/Javascript/datalist.js"></script>
 
 </BODY>
 </HTML>

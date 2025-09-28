@@ -1,11 +1,4 @@
-<?php
-session_start();
-
-// Destroy session if user goes back to login/registration
-if (isset($_SESSION['id'])) {
-session_unset();
-session_destroy();
-}?>
+<?php session_start();?>
 
 <!DOCTYPE HTML>
 <HTML lang="en">
@@ -15,7 +8,7 @@ session_destroy();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="Description" content="width=device-width, initial-scale=1">
 <meta name="KeyWords" content="width=device-width, initial-scale=1">
-<title>Acceuil ( RT )</title>
+<title>Inscription</title>
 <link href="../../../Util/Stylesheet/navbar.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/footer.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/global.css" rel="stylesheet">
@@ -134,14 +127,13 @@ maxlength="8" pattern="[0-9]{8}" required>
 <!-- custom Checkbox -->
 <div class="form-group full-width">
 <label class="checkbox-container">
-<input type="checkbox" name="terms">
+<input type="checkbox" name="terms" required>
 <span class="custom-checkbox"></span>
 <span class="checkbox-label">J’accepte les termes et conditions</span>
-</label></div>
-      
+</label></div>     
+
 <div class="form-group full-width">
 <button type="submit" class="connection" name="Inscription">Connexion</button>
-
 <div class="form-group full-width">
 <span class="compte">Vous avez deja compte ? <a href ="../Invité/Login.php">Connection</a></span>
 <div id="alert-failed" class="Failed <?= !empty($_SESSION['Failed']) ? 'show' : '' ?>">
@@ -208,6 +200,7 @@ Réservez, partez et vivez l’aventure !</p></div>
 <script src="../../../Util/Javascript/dropdown.js"></script>
 <script src="../../../Util/Javascript/alert.js"></script>
 
+<!-- unset all error after refresh -->
 <?php unset(
 $_SESSION['error-nom'],
 $_SESSION['error-prenom'],
