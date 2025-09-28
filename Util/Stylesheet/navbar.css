@@ -46,7 +46,7 @@
  font-family: Verdana, Geneva, Tahoma, sans-serif;
  gap: 20px;
  align-items: center;
- margin-left: 535px;
+ margin-left: 564px;
 }
 .list-v001 {
  display: flex;
@@ -183,7 +183,7 @@ font-size: 14px;
  background-color: #141414;
  border-bottom-right-radius: 5px;
  border-bottom-left-radius: 5px;
- margin-left: 80.8%;
+ margin-left: 80%;
  margin-top: 0px;
  height: 235Px;
  width: 273px;
@@ -246,3 +246,80 @@ font-size: 14px;
  border-radius:50%;
  object-fit:cover;
 }
+
+/* Responsive */
+@media (max-width: 1024px) {
+.navbar_v1,
+.navbar_v2 {
+ padding: 15px 40px;
+ flex-wrap: wrap;
+}
+.list-v1,
+.list-v01,
+.list-v03 {
+ margin-left: 0;
+ justify-content: center;
+ gap: 15px;
+}
+.box-flexplus,
+.box-flexplus2 {
+ margin-left: auto;
+}
+.search input {
+ width: 100%;
+}}
+
+@media (max-width: 768px) {
+.navbar_v1,
+.navbar_v2 {
+ flex-direction: column;
+ align-items: flex-start;
+ padding: 10px 20px;
+ gap: 10px;
+}
+.list-v1,
+.list-v01,
+.list-v03 {
+ flex-direction: column;
+ width: 100%;
+ margin-left: 0;
+ gap: 10px;
+}
+.btn-connect {
+ width: 100%;
+ text-align: center;
+ margin-top: 10px;
+}
+.search input {
+ width: 100%;
+ margin-top: 5px;
+}}
+
+@media (max-width: 480px) {
+.navbar_v1,
+.navbar_v2 {
+ padding: 10px 10px;
+}
+.list-v1,
+.list-v01,
+.list-v03 {
+ flex-direction: column;
+ align-items: flex-start;
+ gap: 8px;
+}
+.box-flexplus,
+.box-flexplus2 {
+ width: 120px;
+ margin-left: 0;
+}
+.btn-connect {
+ padding: 6px 12px;
+ font-size: 14px;
+}
+.search input {
+ padding: 6px 10px;
+ font-size: 13px;
+}
+.website_logo {
+ height: 20px;
+}}

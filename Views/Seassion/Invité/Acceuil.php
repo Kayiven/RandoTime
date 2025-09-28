@@ -61,7 +61,7 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <div class="search-container">
 <div class="search-tabs">
 <button class="tab active">Recherche Live</button></div>
-<form action="./explore1.php" method="get" class="search-fields">
+<form action="#" method="get" class="search-fields">
 <div class="field-group">
 <label for="destination">Destination</label>
 <input type="text" id="destination" name="destination" placeholder="Tapez votre destination"></div>
@@ -95,7 +95,7 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 </div></div></div>
 <input type="hidden" name="adulte" id="adulteInput" value="1">
 <input type="hidden" name="enfant" id="enfantInput" value="0">
-<button type="submit" class="search-btn">Rechercher</button>
+<button type="submit" class="search-btn" formaction="./Login.php">Rechercher</button>
 </form></div>
 
 <!-- Small information Box -->

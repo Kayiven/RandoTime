@@ -113,7 +113,7 @@ input {
  align-items: center;
  gap: 8px;
  cursor: pointer;
- user-select: none;
+ user-select: none; 
  font-family: Arial, sans-serif;
  font-size: 14px;
 }
@@ -298,4 +298,99 @@ background-color: #fff;
  }
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+.login_formulaire {
+ padding: 30px;
+ max-width: 500px;
+}
+.text_1 {
+ font-size: 22px;
+}
+.text_2 {
+ font-size: 16px;
+}
+.form-grid {
+ grid-template-columns: repeat(1, 1fr);
+ gap: 15px;
+}
 
+.birthday-group {
+ flex-direction: column;
+}
+.phone-wrapper,
+.email-wrapper {
+ flex-direction: column;
+}
+
+.phone-wrapper input[type="tel"],
+.email-wrapper input {
+ border-radius: 6px !important;
+ border-left: 2px solid #2c7be5;
+ border-right: 2px solid #2c7be5;
+ width: 100%;
+}
+.radio-group {
+ flex-direction: column;
+}}
+
+@media (max-width: 768px) {
+.background_form {
+ flex-direction: column;
+ padding: 20px 0;
+}
+.login_formulaire {
+ margin-left: auto;
+ margin-right: auto;
+ width: 90%;
+ padding: 25px;
+}
+
+.form-group button {
+ height: 45px;
+ font-size: 15px;
+}
+.custom-select {
+ flex: 1 1 100%;
+ margin-top: 10px;
+}
+.checkbox-container {
+ flex-direction: column;
+ align-items: flex-start;
+}
+.birthday-group {
+ gap: 0.25rem;
+}}
+
+@media (max-width: 480px) {
+.login_formulaire {
+ padding: 20px;
+ width: 95%;
+ margin-left: auto;
+ margin-right: auto;
+}
+.text_1 {
+ font-size: 20px;
+}
+.text_2 {
+ font-size: 14px;
+ margin-bottom: 30px;
+}
+input,
+select,
+.phone-wrapper input,
+.email-wrapper input,
+.form-group button {
+ font-size: 14px;
+ padding: 8px;
+}
+.divider {
+ font-size: 12px;
+}
+.form-grid {
+ grid-template-columns: 1fr;
+ gap: 12px;
+}
+.radio-group {
+ max-width: 100%;
+}}

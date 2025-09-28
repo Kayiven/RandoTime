@@ -1,11 +1,4 @@
-<?php
-session_start();
-
-// Destroy session if user goes back to login/registration
-if (isset($_SESSION['id'])) {
-session_unset();
-session_destroy();
-}?>
+<?php session_start();?>
 
 <!DOCTYPE HTML>
 <HTML lang="en">

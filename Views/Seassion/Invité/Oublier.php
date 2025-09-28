@@ -23,7 +23,7 @@
 <div class="Oublier_formulaire">
 <div class="text_1">Trouvez votre compte</div>
 <p class="description">Veuillez entrer votre e-mail ou votre numéro<br> de mobile pour rechercher votre compte.</p>
-<input type="text" class="input-oublier">
+<input type="text" class="input-oublier" placeholder="Sasir votre email pour recuperé du compte !">
 <button type="submit" class="input-Ann" formaction="../../Seassion/Invité/Login.php">Annuler</button>
 <button type="submit" class="input-sub" >Rechercher</button>
 </from>

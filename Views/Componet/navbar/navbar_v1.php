@@ -13,7 +13,6 @@
 <span class="icon">🔍</span>
 <input type="text" placeholder="Search..." id="searchInput" autocomplete="off"></li>
 <div class="suggestions" id="suggestions"></div>
-<li><img src="../../../Asset/FlexIcons/notification.png" class="notification_icon"></li>
 <li><a href="../../../Views/Seassion/Invité/Login.php" class="btn-connect">Connect</a></li></ul></div>
 <!-- Navbar::Flexplus -->
 <div class="box-flexplus" id="box-flexplus">

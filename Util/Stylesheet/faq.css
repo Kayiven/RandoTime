@@ -78,3 +78,80 @@
 .space {
  padding-bottom: 179px;
 }
+
+/* Responsive  */
+@media (max-width: 1024px) {
+.hero {
+ height: 350px;
+}
+.hero h1 {
+ font-size: 2rem;
+}
+.hero p {
+ font-size: 1rem;
+}
+.container-quest {
+ padding-left: 20%;
+ margin-top: 50px;
+}
+.question-title {
+ width: 500px;
+ font-size: 20px;
+}
+.title-question3,
+.title-Conseils3 {
+ margin-left: 20%;
+ margin-bottom: 60px;
+ margin-top: 80px;
+}}
+
+@media (max-width: 768px) {
+.hero {
+ height: 280px;
+}
+.hero h1 {
+ font-size: 1.6rem;
+}
+.hero p {
+ font-size: 0.9rem;
+}
+.container-quest {
+ padding-left: 10%;
+ margin-top: 40px;
+}
+.question-title {
+ width: 400px;
+ font-size: 18px;
+}
+.title-question3,
+.title-Conseils3 {
+ margin-left: 10%;
+ margin-bottom: 50px;
+ margin-top: 60px;
+}}
+
+@media (max-width: 480px) {
+.hero {
+ height: 220px;
+ padding: 0 10px;
+}
+.hero h1 {
+ font-size: 1.3rem;
+}
+.hero p {
+ font-size: 0.8rem;
+}
+.container-quest {
+ padding-left: 5%;
+ margin-top: 30px;
+}
+.question-title {
+ width: 300px;
+ font-size: 16px;
+}
+.title-question3,
+.title-Conseils3 {
+ margin-left: 5%;
+ margin-bottom: 40px;
+ margin-top: 40px;
+}}

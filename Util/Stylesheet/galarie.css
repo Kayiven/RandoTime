@@ -217,3 +217,79 @@
 .space {
  padding-bottom: 210px;
 }
+
+/* Responsive  */
+@media (max-width: 1024px) {
+.hero {
+ height: 350px;
+}
+.hero h1 {
+ font-size: 2rem;
+}
+.hero p {
+ font-size: 1rem;
+}
+.gallery,
+.gallery2 {
+ padding: 50px 20px;
+ margin-left: 0;
+ max-width: 100%;
+}
+.gallery-container,
+.gallery-container2 {
+ grid-template-columns: repeat(3, 1fr);
+ gap: 15px;
+}
+.quote-section {
+ max-width: 90%;
+ padding: 30px 15px;
+}
+.testimonials {
+ padding: 30px 15px;
+}
+.testimonial-container {
+ grid-template-columns: repeat(3, 1fr);
+ margin-left: 0;
+ max-width: 100%;
+}}
+
+@media (max-width: 768px) {
+.hero {
+ height: 280px;
+}
+.hero h1 {
+ font-size: 1.6rem;
+}
+.hero p {
+ font-size: 0.9rem;
+}
+.gallery-container,
+.gallery-container2 {
+ grid-template-columns: repeat(2, 1fr);
+}
+.testimonial-container {
+ grid-template-columns: repeat(2, 1fr);
+}}
+
+@media (max-width: 480px) {
+.hero {
+ height: 220px;
+ padding: 0 10px;
+}
+.hero h1 {
+ font-size: 1.3rem;
+}
+.hero p {
+ font-size: 0.8rem;
+}
+.gallery-container,
+.gallery-container2 {
+ grid-template-columns: 1fr;
+}
+.testimonial-container {
+ grid-template-columns: 1fr;
+}
+.quote-section {
+ font-size: 0.9rem;
+ padding: 20px 10px;
+}}

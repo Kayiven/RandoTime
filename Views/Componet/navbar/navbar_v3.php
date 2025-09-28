@@ -25,7 +25,6 @@ $userEmail = $_SESSION['user_email'] ?? '';
 <input type="text" placeholder="Search..." id="searchInput" autocomplete="off"></li>
 <div class="suggestions" id="suggestions"></div>
 <li><img src="../../../Asset/FlexIcons/mode.png" class="profile-img"></li>
-<li><img src="../../../Asset/FlexIcons/notification.png" class="notification_icon"></li>
 <li><img src="../../../Asset/FlexIcons/profile_user.png" class="profile-img"  onclick="compte3()" id="seasion-compte3"></ul></div>
 <!-- Navbar::Flexplus -->
 <div class="box-flexplus2" id="box-flexplus">
