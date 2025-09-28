@@ -44,7 +44,7 @@ $_SESSION['token'] = $user['token'];
 $_SESSION['nom']   = $user['nom'];
 $_SESSION['email'] = $user['email'];
 
-header('Location: ../../Views/Seassion/Inscrit/home.php');
+header('Location: ../../Views/Seassion/Inscrit/Home.php');
 exit;
 }
 ?>

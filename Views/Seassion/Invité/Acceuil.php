@@ -61,7 +61,7 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <div class="search-container">
 <div class="search-tabs">
 <button class="tab active">Recherche Live</button></div>
-<form action="#" method="get" class="search-fields">
+<form action="#" method="post" class="search-fields">
 <div class="field-group">
 <label for="destination">Destination</label>
 <input type="text" id="destination" name="destination" placeholder="Tapez votre destination"></div>
@@ -146,7 +146,12 @@ echo '<svg viewBox="0 0 24 24"><path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24
 4.03 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></svg>';
 }}?></div>
 <h2 class="sub-title"><?= htmlspecialchars($place['title'] ?? '') ?></h2>
-<p class="Description-1"><?= nl2br(htmlspecialchars($place['description'] ?? '')) ?></p>  
+<p class="Description-1"><?= nl2br(htmlspecialchars($place['description'] ?? '')) ?></p> 
+<p><?php if (isset($_SESSION['id'])): ?>
+<a href="<?= htmlspecialchars($place['link'] ?? '#') ?>" class="m">Voir plus</a>
+<?php else: ?><a href="javascript:void(0);" 
+onclick="alert('⚠️ Vous devez avoir un compte pour continuer'); window.location.href='./login.php';" class="m">Voir plus
+</a><?php endif; ?></p>
 <?php $price = $place['price'] ?? 0;
 $discount = $place['discount'] ?? 0;
 if (!empty($discount) && $discount < $price): 
@@ -161,6 +166,7 @@ $discountPercent = round((($price - $discount) / $price) * 100);?>
 <div class="price">Gratuit</div>
 <?php endif; ?></div>
 <?php endforeach; ?></div>
+
 
 <!-- Les plus Reservés -->
 <?php require_once __DIR__ . '/../../../database/Configs/connection_db.php';
@@ -187,7 +193,12 @@ echo '<svg viewBox="0 0 24 24"><path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24
 4.03 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></svg>';
 }}?></div>
 <h2 class="sub-title"><?= htmlspecialchars($place['title'] ?? '') ?></h2>
-<p class="Description-1"><?= nl2br(htmlspecialchars($place['description'] ?? '')) ?></p>  
+<p class="Description-1"><?= nl2br(htmlspecialchars($place['description'] ?? '')) ?></p>
+<p><?php if (isset($_SESSION['id'])): ?>
+<a href="<?= htmlspecialchars($place['link1'] ?? '#') ?>" class="m">Voir plus</a>
+<?php else: ?><a href="javascript:void(0);" 
+onclick="alert('⚠️ Vous devez avoir un compte pour continuer'); window.location.href='./login.php';" class="m">Voir plus
+</a><?php endif; ?></p>
 <?php $price = $place['price'] ?? 0;
 $discount = $place['discount'] ?? 0;
 if (!empty($discount) && $discount < $price): 
@@ -228,7 +239,12 @@ echo '<svg viewBox="0 0 24 24"><path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24
 4.03 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></svg>';
 }}?></div>
 <h2 class="sub-title"><?= htmlspecialchars($place['title'] ?? '') ?></h2>
-<p class="Description-1"><?= nl2br(htmlspecialchars($place['description'] ?? '')) ?></p>  
+<p class="Description-1"><?= nl2br(htmlspecialchars($place['description'] ?? '')) ?></p>
+<p><?php if (isset($_SESSION['id'])): ?>
+<a href="<?= htmlspecialchars($place['link2'] ?? '#') ?>" class="m">Voir plus</a>
+<?php else: ?><a href="javascript:void(0);" 
+onclick="alert('⚠️ Vous devez avoir un compte pour continuer'); window.location.href='./login.php';" class="m">Voir plus
+</a><?php endif; ?></p>
 <?php $price = $place['price'] ?? 0;
 $discount = $place['discount'] ?? 0;
 if (!empty($discount) && $discount < $price): 

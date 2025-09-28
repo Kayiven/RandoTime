@@ -147,6 +147,11 @@
  display: inline-block;
 }
 
+.m{
+ color: #004A7E;
+ font-size: 14px;
+}
+
 /* information Flex */
 .simple-features {
  display: flex;
@@ -219,7 +224,7 @@
 }
 .Description-1 {
  max-width: 270px;
- font-size: 13px;
+ font-size: 12px;
  color: #333;
  margin-bottom: 15px;
  line-height: 1.5;
@@ -378,7 +383,6 @@
 .space {
  padding-bottom: 216px;
 }
-
 
 /* Responsive  */
 @media (max-width: 1200px) {

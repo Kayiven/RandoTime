@@ -12,11 +12,11 @@ $userEmail = $_SESSION['user_email'] ?? '';
 <div class="navbar_v1">
 <img src="../../../Asset/FlexIcons/logo.svg" class="website_logo">
 <ul class="list-v1">
-<li><a href="../../Seassion/Invité/Acceuil.php">Acceuil</a></li>
-<li><a href="../../Seassion/Invité/Apropos.php">Apropos</a></li>
-<li><a href="../../Seassion/Invité/evenements.php">Destination</a></li>
-<li><a href="../../Seassion/Invité/evenements.php">Événements</a></li>
-<li><a href="../../Seassion/Invité/Galarie.php">Galarie</a></li>
+<li><a href="../../Seassion/Inscrit/home.php">Acceuil</a></li>
+<li><a href="#">Apropos</a></li>
+<li><a href="#">Destination</a></li>
+<li><a href="#">Événements</a></li>
+<li><a href="#">Galarie</a></li>
 <li><label class="more" onclick="more()" id="More">More</label></li></ul>
 <!-- Navbar::FlexExtension -->
 <ul class="list-v03">
@@ -29,8 +29,8 @@ $userEmail = $_SESSION['user_email'] ?? '';
 <!-- Navbar::Flexplus -->
 <div class="box-flexplus2" id="box-flexplus">
 <ul class="list-v001">
-<li><a href="../../Seassion/Invité/Contact.php">Contact</a></li>
-<li><a href="../../Seassion/Invité/Faq.php">FAQ</a></li></ul></div>
+<li><a href="#">Contact</a></li>
+<li><a href="#">FAQ</a></li></ul></div>
 <!-- Navbar::options -->
 <form action="#" method="post">
 <div class="seasion-options" id="seasion-op">
