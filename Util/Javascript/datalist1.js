@@ -1,11 +1,11 @@
 // Redact pages
 const items = {
 "acceuil": "../../Seassion/Inscrit/Home.php",
-"apropos": "#",
+"apropos": "../../Seassion/Inscrit/About.php",
 "evenements": "#",
-"galarie": "#",
-"contact": "#",
-"faq": "#",
+"galarie": "../../Seassion/Inscrit/Picture.php",
+"contact": "../../Seassion/Inscrit/Support.php",
+"faq": "../../Seassion/Inscrit/Question.php",
 };
 
 const input = document.getElementById("searchInput");

@@ -1,6 +1,5 @@
-<?php
-session_start();
-
+<?php session_start();
+// Verify if compte open or not !
 if (!isset($_SESSION['id'])) {
 header("Location: ../Invité/Login.php");
 exit;
