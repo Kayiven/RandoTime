@@ -13,7 +13,7 @@ exit;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="Description" content="width=device-width, initial-scale=1">
 <meta name="KeyWords" content="width=device-width, initial-scale=1">
-<title>Apropos</title>
+<title>Destination</title>
 <link href="../../../Util/Stylesheet/navbar.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/footer.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/global.css" rel="stylesheet">
@@ -24,7 +24,50 @@ exit;
 <!-- Rappler le taskbar dans Acceuil -->
 <?php require '../../Componet/navbar/navbar_v3.php';?>
 
-<div class="bordex-1"></div>
+<!-- Banner du Debut -->
+<section class="hero">
+<div class="hero-content">
+<h1>Desination</h1>
+<p>Decouver nous Destination avec nous!</p>
+</div></section>
+
+<div class="container_filter">
+    <!-- title of filter -->
+    <div class="container_tab">
+        <div class="Name_filter">By Filter</div>
+        <div class="Name_filter1">Name</div>
+        <input type="text" placeholder="Saisir le nom emplacement!" class="recherche_place" name="name">
+    </div>
+    <hr class="space">
+
+    <!-- stars categorie -->
+    <div class="container_stars">
+        <div class="Name-stars">Stars</div>
+        <label><input type="checkbox" name="stars[]" value="all"> All</label><br>
+        <label><input type="checkbox" name="stars[]" value="1"> 1 star</label><br>
+        <label><input type="checkbox" name="stars[]" value="2"> 2 stars</label><br>
+        <label><input type="checkbox" name="stars[]" value="3"> 3 stars</label><br>
+        <label><input type="checkbox" name="stars[]" value="4"> 4 stars</label><br>
+        <label><input type="checkbox" name="stars[]" value="5"> 5 stars</label>
+    </div>
+    <hr class="space">
+
+    <!-- Date categorie -->
+    <div class="container-date">
+        <div class="Name-date">Date</div>
+        <input type="date" name="date_start">
+    </div>
+    <hr class="space">
+
+    <!-- Price categorie -->
+    <div class="container-price">
+        <div class="Name-price">Price</div>
+        <input type="text" name="price" id="Price">
+    </div>
+    <hr class="space">
+
+    <button type="submit" id="filterBtn">Appliquer</button>
+</div>
 
 
 
@@ -86,5 +129,6 @@ Réservez, partez et vivez l’aventure !</p></div>
 <!-- Javascript Requirement -->
 <script src="../../../Util/Javascript/dropdown.js"></script>
 <script src="../../../Util/Javascript/datalist1.js"></script>  
+<script src="../../../Util/Javascript/modal.js"></script>  
 </body>
 </html>

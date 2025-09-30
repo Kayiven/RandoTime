@@ -90,8 +90,8 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <label for="arrivee">Date de départ</label>
 <input type="date" id="depart" name="depart"></div>
 <div class="field-group">
-<label for="depart">Date d'expiration</label>
-<input type="date" id="d'expiration" name="d'expiration"></div>
+<label for="Price">Price</label>
+<input type="text" id="Price" name="Price" placeholder="Mettre ton prix"></div>
 <div class="field-group">
 <label>Voyageurs</label>
 <div class="person-select">
@@ -373,6 +373,7 @@ Réservez, partez et vivez l’aventure !</p></div>
 <script src="../../../Util/Javascript/sliders-v2.js"></script>
 <script src="../../../Util/Javascript/animation.js"></script>
 <script src="../../../Util/Javascript/datalist1.js"></script>
+<script src="../../../Util/Javascript/modal.js"></script>
 
 </BODY>
 </HTML>

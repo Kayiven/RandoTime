@@ -61,7 +61,7 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <div class="search-container">
 <div class="search-tabs">
 <button class="tab active">Recherche Live</button></div>
-<form action="#" method="post" class="search-fields">
+<form action="#" method="get" class="search-fields">
 <div class="field-group">
 <label for="destination">Destination</label>
 <input type="text" id="destination" name="destination" placeholder="Tapez votre destination"></div>
@@ -69,8 +69,8 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <label for="arrivee">Date de départ</label>
 <input type="date" id="depart" name="depart"></div>
 <div class="field-group">
-<label for="depart">Date d'expiration</label>
-<input type="date" id="d'expiration" name="d'expiration"></div>
+<label for="Price">Price</label>
+<input type="text" id="Price" name="Price" placeholder="Mettre ton prix"></div>
 <div class="field-group">
 <label>Voyageurs</label>
 <div class="person-select">
@@ -95,7 +95,8 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 </div></div></div>
 <input type="hidden" name="adulte" id="adulteInput" value="1">
 <input type="hidden" name="enfant" id="enfantInput" value="0">
-<button type="submit" class="search-btn" formaction="./Login.php">Rechercher</button>
+<button type="submit" class="search-btn" formaction="./Login.php"
+onclick="alert('⚠️ Vous devez avoir un compte pour continuer');">Rechercher</button>
 </form></div>
 
 <!-- Small information Box -->
@@ -353,6 +354,7 @@ Réservez, partez et vivez l’aventure !</p></div>
 <script src="../../../Util/Javascript/sliders-v2.js"></script>
 <script src="../../../Util/Javascript/animation.js"></script>
 <script src="../../../Util/Javascript/datalist.js"></script>
+<script src="../../../Util/Javascript/modal.js"></script>
 
 </BODY>
 </HTML>
