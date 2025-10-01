@@ -31,42 +31,70 @@ exit;
 <p>Decouver nous Destination avec nous!</p>
 </div></section>
 
+
+
+
 <div class="container_filter">
-    <!-- title of filter -->
-    <div class="container_tab">
-        <div class="Name_filter">By Filter</div>
-        <div class="Name_filter1">Name</div>
-        <input type="text" placeholder="Saisir le nom emplacement!" class="recherche_place" name="name">
-    </div>
-    <hr class="space">
+<!-- title of filter -->
+<div class="container_tab">
+<div class="Name_filter">By Filter</div>
+<div class="Name_filter1">Name</div>
+<input type="text" placeholder="Saisir le nom emplacement!" class="recherche_place" name="name">
+</div>
+<hr class="space">
 
-    <!-- stars categorie -->
-    <div class="container_stars">
-        <div class="Name-stars">Stars</div>
-        <label><input type="checkbox" name="stars[]" value="all"> All</label><br>
-        <label><input type="checkbox" name="stars[]" value="1"> 1 star</label><br>
-        <label><input type="checkbox" name="stars[]" value="2"> 2 stars</label><br>
-        <label><input type="checkbox" name="stars[]" value="3"> 3 stars</label><br>
-        <label><input type="checkbox" name="stars[]" value="4"> 4 stars</label><br>
-        <label><input type="checkbox" name="stars[]" value="5"> 5 stars</label>
-    </div>
-    <hr class="space">
+<!-- stars categorie -->
+<div class="container_stars">
+<div class="Name-stars">Stars</div>
+<label><input type="checkbox" name="stars[]" value="all"> All</label><br>
+<label><input type="checkbox" name="stars[]" value="1"> 1 star</label><br>
+<label><input type="checkbox" name="stars[]" value="2"> 2 stars</label><br>
+<label><input type="checkbox" name="stars[]" value="3"> 3 stars</label><br>
+<label><input type="checkbox" name="stars[]" value="4"> 4 stars</label><br>
+<label><input type="checkbox" name="stars[]" value="5"> 5 stars</label>
+</div>
+<hr class="space">
 
-    <!-- Date categorie -->
-    <div class="container-date">
-        <div class="Name-date">Date</div>
-        <input type="date" name="date_start">
-    </div>
-    <hr class="space">
+<!-- Date categorie -->
+<div class="container-date">
+<div class="Name-date">Date</div>
+<input type="date" name="date_start">
+</div>
+<hr class="space">
 
-    <!-- Price categorie -->
-    <div class="container-price">
-        <div class="Name-price">Price</div>
-        <input type="text" name="price" id="Price">
-    </div>
-    <hr class="space">
+<!-- Price categorie -->
+<div class="container-price">
+<div class="Name-price">Price</div>
+<input type="text" name="price" id="Price">
+</div>
+<hr class="space">
 
-    <button type="submit" id="filterBtn">Appliquer</button>
+<!-- Adults categorie -->
+<div class="container_Adults">
+<div class="Name-Adults">Adult</div>
+<label><input type="checkbox" name="Adults[]" value="all"> All</label><br>
+<label><input type="checkbox" name="Adults[]" value="1"> 1 Adults</label><br>
+<label><input type="checkbox" name="Adults[]" value="2"> 2 Adults</label><br>
+<label><input type="checkbox" name="Adults[]" value="3"> 3 Adults</label><br>
+<label><input type="checkbox" name="Adults[]" value="4"> 4 Adults</label><br>
+<label><input type="checkbox" name="Adults[]" value="5"> 5 Adults</label><br>
+<label><input type="checkbox" name="Adults[]" value="5"> 6 Adults</label>
+</div>
+<hr class="space">
+
+<!-- Enfants categorie -->
+<div class="container_Enfants">
+<div class="Name-Enfants">Enfants</div>
+<label><input type="checkbox" name="Enfants[]" value="all"> All</label><br>
+<label><input type="checkbox" name="Enfants[]" value="1"> 1 Enfants</label><br>
+<label><input type="checkbox" name="Enfants[]" value="2"> 2 Enfants</label><br>
+<label><input type="checkbox" name="Enfants[]" value="3"> 3 Enfants</label><br>
+<label><input type="checkbox" name="Enfants[]" value="4"> 4 Enfants</label>
+</div>
+<hr class="space">
+
+<!-- submit categorie -->
+<button type="submit" id="filterBtn">Appliquer</button>
 </div>
 
 
