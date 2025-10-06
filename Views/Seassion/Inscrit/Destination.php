@@ -182,7 +182,9 @@ echo '<svg viewBox="0 0 24 24" class="star"><path d="M22 9.24l-7.19-.62L12 2 9.1
 }}?> 
 
 <!-- BOOK NOW BUTTON -->
-<button>Book Now</button>
+<form method="post">
+<button formaction="<?= htmlspecialchars($place['link']) ?>">Book Now</button>
+</form>
 </div>
 
 <!-- DETAILS TABLE -->

@@ -39,5 +39,5 @@ $userEmail = $_SESSION['user_email'] ?? '';
 <img src="<?php echo htmlspecialchars($_SESSION['profile_image']); ?>" 
 alt="Profile Picture" class="seasion-pic" ></li>
 <li class="seasion_nom">Welcome, <b><?php echo htmlspecialchars($_SESSION['nom']);?></b> !</li>
-<li><input type="submit" value="Parametre" class="Parametre"></li>
+<li><input type="submit" value="Parametre" class="Parametre" formaction="../../Seassion/Inscrit/Profile.php"></li>
 <li><input type="submit" value="Disconnect" class="Disconnect" formaction="../../../DataBase/Actions/disconnect-sys.php"></li></div></form>
