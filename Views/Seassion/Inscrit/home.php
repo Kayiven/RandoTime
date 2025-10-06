@@ -81,24 +81,29 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <!--  Search with Filter   -->
 <div class="search-container">
 <div class="search-tabs">
-<button class="tab active">Recherche Live</button></div>
-<form action="#" method="get" class="search-fields">
+<button class="tab active">Recherche Live</button>
+</div>
+<form action="./Destination.php" method="get" class="search-fields">
 <div class="field-group">
 <label for="destination">Destination</label>
-<input type="text" id="destination" name="destination" placeholder="Tapez votre destination"></div>
+<input type="text" id="destination" name="name" placeholder="Tapez votre destination">
+</div>
 <div class="field-group">
-<label for="arrivee">Date de départ</label>
-<input type="date" id="depart" name="depart"></div>
+<label for="depart">Date de départ</label>
+<input type="date" id="depart" name="date_start">
+</div>
 <div class="field-group">
-<label for="Price">Price</label>
-<input type="text" id="Price" name="Price" placeholder="Mettre ton prix"></div>
+<label for="Price">Prix maximum</label>
+<input type="text" id="Price" name="price" id="Price" placeholder="Mettre ton prix">
+</div>
 <div class="field-group">
 <label>Voyageurs</label>
 <div class="person-select">
 <button type="button" id="personToggle" class="search-person-btn">
-👤 1 Adulte, 0 Enfant</button>
+ 👤 1 Adulte, 0 Enfant
+</button>
 <div id="personBox" class="person-box">
-<button type="button" class="person-close" onclick="closePersonBox()">✖</button>
+<button type="button" class="person-close" onclick="closePersonBox()">✖</button> 
 <div class="person-row">
 <div class="title">Adulte(s)</div>
 <div class="counter">
@@ -114,9 +119,11 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <button type="button" onclick="changeCount('child', 1)">+</button>
 </div></div>
 </div></div></div>
-<input type="hidden" name="adulte" id="adulteInput" value="1">
-<input type="hidden" name="enfant" id="enfantInput" value="0">
-<button type="submit" class="search-btn" formaction="#">Rechercher</button>
+
+<!-- Hidden inputs for counts -->
+<input type="hidden" name="Adults[]" id="adulteInput" value="1">
+<input type="hidden" name="Enfants[]" id="enfantInput" value="0">
+<button type="submit" class="search-btn">Rechercher</button>
 </form></div>
 
 <!-- Small information Box -->

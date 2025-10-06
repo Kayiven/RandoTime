@@ -3,7 +3,7 @@ const items = {
 "acceuil": "../../Seassion/Inscrit/Home.php",
 "apropos": "../../Seassion/Inscrit/About.php",
 "destination": "../../Seassion/Inscrit/Destination.php",
-"evenements": "#",
+"evenements": "../../Seassion/Inscrit/Evenements.php",
 "galarie": "../../Seassion/Inscrit/Picture.php",
 "contact": "../../Seassion/Inscrit/Support.php",
 "faq": "../../Seassion/Inscrit/Question.php",

@@ -3,7 +3,8 @@
  display: flex;
  position: relative;
  font-family: Verdana, Geneva, Tahoma, sans-serif;
- background: url('../../Asset/Catagories/background_V2.jpg') center/cover no-repeat;
+ background: url("../../Asset/Catagories/background_V2.jpg") center/cover
+   no-repeat;
  justify-content: center;
  align-items: center;
  text-align: center;
@@ -35,20 +36,18 @@
  font-size: 1.2rem;
 }
 
-
-/* Table of filter */
-/* Container global */
+/* === Filter Sidebar === */
 .container_filter {
  width: 320px;
- background: #fff;
+ background: #e7e6e6;
+ padding: 25px;
+ margin-left: 3.8%;
  border-radius: 12px;
- padding: 20px;
  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
- font-family: Arial, sans-serif;
- color: #333;
+ font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Titres des sections */
+/* Section titles */
 .container_filter .Name_filter,
 .container_filter .Name_filter1,
 .container_filter .Name-stars,
@@ -57,15 +56,15 @@
 .container_filter .Name-Adults,
 .container_filter .Name-Enfants {
  font-weight: bold;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
  margin-bottom: 8px;
  font-size: 14px;
  color: #222;
 }
 
-/* Inputs texte et date */
-.container_filter input[type="text"],
+/* Inputs */
 .container_filter input[type="date"] {
- width: 60%;
+ width: 62%;
  padding: 8px 10px;
  margin-top: 4px;
  border: 1px solid #ccc;
@@ -73,7 +72,15 @@
  font-size: 14px;
  transition: 0.3s;
 }
-
+.container_filter input[type="text"] {
+ width: 88%;
+ padding: 8px 10px;
+ margin-top: 4px;
+ border: 1px solid #ccc;
+ border-radius: 6px;
+ font-size: 14px;
+ transition: 0.3s;
+}
 .container_filter input[type="text"]:focus,
 .container_filter input[type="date"]:focus {
  border-color: #007bff;
@@ -88,20 +95,147 @@
  margin: 4px 0;
  cursor: pointer;
 }
-
 .container_filter input[type="checkbox"] {
  margin-right: 6px;
  accent-color: #007bff;
 }
+.page-container {
+ display: flex;
+ align-items: flex-start;
+ justify-content: flex-start;
+ gap: 40px;
+ padding: 40px;
+ min-height: calc(100vh - 100px);
+ background: #f9f9f9;
+}
 
-/* Séparateurs */
+/* Filter stays left */
+.container_filter {
+ width: 320px;
+ flex-shrink: 0;
+ position: sticky;
+}
+.container-card-filter {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ gap: 25px;
+ margin-top: 8px;
+ align-items: center;
+}
+.card {
+ display: flex;
+ width: 85%;
+ background: #fff;
+ border-radius: 10px;
+ box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+ overflow: hidden;
+ padding: 15px;
+ gap: 20px;
+}
+.card-image img {
+ width: 200px;
+ height: 140px;
+ object-fit: cover;
+ border-radius: 8px;
+}
+.card-info {
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+.card-title .contain-card-name {
+ font-weight: 600;
+ font-size: 18px;
+ margin-bottom: 5PX;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.card-title .contain-card-subtitle {
+ color: #555;
+ font-size: 16px;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.stars {
+ display: flex;
+ gap: 3px;
+}
+.star {
+ width: 25px;
+ height: 25px;
+ fill: #ccc;
+}
+.star.filled {
+ fill: #f4c542;
+}
+.card-details {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 15px 30px;
+}
+.detail {
+ display: flex;
+ flex-direction: column;
+}
+.detail .label {
+ font-size: 14px;
+ color: #777;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.detail .value {
+ font-weight: 600;
+ font-size: 15px;
+ margin-top: 10px;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.detail .value.online {
+ color: green;
+}
+.detail .value.offline {
+ color: red;
+}
+.card-info button {
+ padding: 7px 20px;
+ background: #007bff;
+ color: white;
+ border: none;
+ margin-left: 70%;
+ border-radius: 6px;
+ cursor: pointer;
+ width: 150px;
+}
+
+/* Pagination */
+.pagination {
+ text-align: center;
+ margin-bottom: 20px;
+}
+.pagination a {
+ margin: 0 5px;
+ padding: 5px 10px;
+ border-radius: 4px;
+ background: #eee;
+ color: #000;
+ text-decoration: none;
+}
+.pagination a.active {
+ background: #007bff;
+ color: #fff;
+}
+.pagination a:hover {
+ background: #007bff;
+ color: #fff;
+ transition: 0.3s;
+}
+
+/* Dividers */
 hr.space {
  border: none;
- border-top: 1px solid #e5e5e5;
+ border-top: 1px solid #ddd;
  margin: 15px 0;
 }
 
-/* Bouton */
+/* Apply Button */
 #filterBtn {
  width: 100%;
  padding: 10px;
@@ -114,10 +248,6 @@ hr.space {
  font-size: 15px;
  transition: 0.3s;
 }
-
 #filterBtn:hover {
  background: #0056b3;
 }
-
-
-

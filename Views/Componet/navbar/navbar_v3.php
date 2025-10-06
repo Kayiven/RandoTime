@@ -15,7 +15,7 @@ $userEmail = $_SESSION['user_email'] ?? '';
 <li><a href="../../Seassion/Inscrit/Home.php">Acceuil</a></li>
 <li><a href="../../Seassion/Inscrit/About.php">Apropos</a></li>
 <li><a href="../../Seassion/Inscrit/Destination.php">Destination</a></li>
-<li><a href="#">Événements</a></li>
+<li><a href="../../Seassion/Inscrit/evenements.php">Événements</a></li>
 <li><a href="../../Seassion/Inscrit/Picture.php">Galarie</a></li>
 <li><label class="more" onclick="more()" id="More">More</label></li></ul>
 <!-- Navbar::FlexExtension -->
