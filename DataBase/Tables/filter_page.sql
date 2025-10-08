@@ -11,4 +11,5 @@ CREATE TABLE `filter` (
 `date` DATE NOT NULL,
 `price` DECIMAL(10,2) NOT NULL
 `link` VARCHAR(255) NULL,
+`Participant` INT NOT NULL DEFAULT 0,
 );

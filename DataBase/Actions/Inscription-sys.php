@@ -40,9 +40,8 @@ header("Location: ../../Views/Seassion/Invité/Inscription.php");
 exit;
 }
 
-// Génération ID et token sécurisé
+// Génération ID 
 $userId = bin2hex(random_bytes(8)); 
-$token  = bin2hex(random_bytes(16));
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
 // Vérification si email, nom, prénom ou téléphone existe déjà
@@ -64,12 +63,11 @@ exit;
 
 // Insertion dans la DB
 $stmt = $pdo->prepare("INSERT INTO compte
-(id, token, nom, prenom, email, birthday, telephone, gender, role, motpass, profile_pic)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+(id, nom, prenom, email, birthday, telephone, gender, role, motpass, profile_pic)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-if ($stmt->execute([$userId, $token, $nom, $prenom, $email, $date, $telephone, $gender, $role, $passwordHash, $profile_pic])) {
+if ($stmt->execute([$userId, $nom, $prenom, $email, $date, $telephone, $gender, $role, $passwordHash, $profile_pic])) {
 $_SESSION['id'] = $userId;
-$_SESSION['token'] = $token;
 $_SESSION['nom'] = $nom;
 $_SESSION['email'] = $email;
 session_regenerate_id(true);

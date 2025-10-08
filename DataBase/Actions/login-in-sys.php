@@ -40,9 +40,19 @@ exit;
 // Login OK
 unset($_SESSION['old_username']);
 $_SESSION['id']    = $user['id'];
-$_SESSION['token'] = $user['token'];
 $_SESSION['nom']   = $user['nom'];
 $_SESSION['email'] = $user['email'];
+
+// Store locally as well
+$current_account_id = $user['nb'];
+$current_account_name = $user['nom'];
+
+// Insert a tracker record for this login
+$stmt = $pdo->prepare("INSERT INTO tracker_login (id_compte, nom) VALUES (:id_compte, :nom)");
+$stmt->execute([
+'id_compte' => $current_account_id,
+'nom' => $current_account_name
+]);
 
 header('Location: ../../Views/Seassion/Inscrit/Home.php');
 exit;
