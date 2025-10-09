@@ -43,16 +43,11 @@ $_SESSION['id']    = $user['id'];
 $_SESSION['nom']   = $user['nom'];
 $_SESSION['email'] = $user['email'];
 
-// Store locally as well
-$current_account_id = $user['nb'];
-$current_account_name = $user['nom'];
+$current_compte = $user['id'];
 
-// Insert a tracker record for this login
-$stmt = $pdo->prepare("INSERT INTO tracker_login (id_compte, nom) VALUES (:id_compte, :nom)");
-$stmt->execute([
-'id_compte' => $current_account_id,
-'nom' => $current_account_name
-]);
+// Update last login time
+$stmt = $pdo->prepare("UPDATE compte SET last_login = NOW() WHERE id = ?");
+$stmt->execute([$current_compte]);
 
 header('Location: ../../Views/Seassion/Inscrit/Home.php');
 exit;

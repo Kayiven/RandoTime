@@ -10,6 +10,7 @@ telephone VARCHAR(12) NOT NULL UNIQUE,
 gender VARCHAR(5) NOT NULL,
 role VARCHAR(20) NOT NULL DEFAULT 'Member',
 motpass VARCHAR(255) NOT NULL, 
-profile_pic VARCHAR(255) NOT NULL DEFAULT '../../../Asset/FlexIcons/profile_user.png',
+photo VARCHAR(255) NOT NULL DEFAULT '../../../Asset/FlexIcons/profile_user.png',
+last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

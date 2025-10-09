@@ -9,15 +9,11 @@ require_once __DIR__ . '/../../../database/Configs/connection_db.php';
 $userId = $_SESSION['id'];
 
 // fetch profile picture from compte table
-$sql = "SELECT profile_pic FROM compte WHERE id = :id";
+$sql = "SELECT photo FROM compte WHERE id = :id";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(['id' => $userId]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// fallback to default if empty or invalid
-$defaultPic = "../../../Asset/FlexIcons/profile_user.png";
-$_SESSION['profile_image'] = (!empty($user['profile_pic']) && file_exists($user['profile_pic'])) 
-? $user['profile_pic'] : $defaultPic;?>
+?>
 
 <!DOCTYPE HTML>
 <HTML lang="en">

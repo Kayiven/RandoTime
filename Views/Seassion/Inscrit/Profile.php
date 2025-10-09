@@ -8,39 +8,68 @@ exit;
 }
 
 // === Fetch total numbers ===
+$current_compte = $_SESSION['id'] ?? null;
+
+if ($current_compte) {
+// Total number of users (optional, for your chart)
 $stmt = $pdo->query("SELECT COUNT(*) FROM compte");
 $total_comptes = (int)$stmt->fetchColumn();
 
-$stmt = $pdo->query("SELECT COUNT(*) FROM Avis_participants");
+// Fetch logged-in user's full name (if comments store full name)
+$stmt = $pdo->prepare("SELECT nom, prenom FROM compte WHERE id = :id LIMIT 1");
+$stmt->execute(['id' => $current_compte]);
+$userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($userData) {
+$nom = $userData['nom'];
+$prenom = $userData['prenom'];
+$full_name = trim("$nom $prenom");
+
+// Count comments made by this user
+$stmt = $pdo->prepare("SELECT COUNT(*) FROM Avis_participants WHERE prenom = ?");
+$stmt->execute([$full_name]);
 $total_avis = (int)$stmt->fetchColumn();
 
-// avoid division by zero
-$total_global = $total_comptes + $total_avis;
-if ($total_global == 0) $total_global = 1;
-
-// calculate percentages
-$percent_comptes = round(($total_comptes / $total_global) * 100);
-$percent_avis = round(($total_avis / $total_global) * 100);
-
-$current_account_id = $_SESSION['id'];
-
-// 1️⃣ Number of comments this account posted
-$stmt = $pdo->prepare("SELECT COUNT(*) FROM Avis_participants WHERE id = :id");
-$stmt->execute(['id' => $current_account_id]);
-$total_comments = (int)$stmt->fetchColumn();
-
-// 2️⃣ Number of events/places this account participated in
-$stmt = $pdo->prepare("SELECT COUNT(*) FROM reservations WHERE id = :id");
-$stmt->execute(['id' => $current_account_id]);
+// Count participations of this user
+$stmt = $pdo->prepare("SELECT COUNT(*) FROM reservations WHERE nom = ? AND prenom = ?");
+$stmt->execute([$nom, $prenom]);
 $total_participations = (int)$stmt->fetchColumn();
 
+// Count compte of this user
+if ($current_compte) {
+$stmt = $pdo->prepare("SELECT COUNT(*) FROM compte WHERE id = ?");
+$stmt->execute([$current_compte]);
+$total_compte = (int)$stmt->fetchColumn();
+}
+
+// --- Calculate percentages ---
+$total_global = $total_avis + $total_participations + $total_compte;
+if ($total_global == 0) $total_global = 1; 
+
+$percent_avis = round(($total_avis / $total_global) * 100);
+$percent_participations = round(($total_participations / $total_global) * 100);
+$percent_compte = round(($total_compte / $total_global) * 100);
+}}
+
+if ($current_compte) {
+$stmt = $pdo->prepare("SELECT nom, prenom FROM compte WHERE id = :id LIMIT 1");
+$stmt->execute(['id' => $current_compte]);
+$userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($userData) {
+$full_name = trim($userData['nom'] . ' ' . $userData['prenom']);
+$stmt = $pdo->prepare("SELECT COUNT(*) FROM Avis_participants WHERE prenom = ?");
+$stmt->execute([$full_name]);
+$total_comments = (int)$stmt->fetchColumn();
+}}
+
 // 3️⃣ Activity time (number of logins or last login timestamp)q
-$total_logins = 0;
-$stmt = $pdo->prepare("SELECT COUNT(*) FROM tracker_login WHERE id_compte = :id_compte");
-$stmt->execute(['id_compte' => $current_account_id]);
-$total_logins = (int)$stmt->fetchColumn();
+$stmt = $pdo->prepare("SELECT last_login FROM compte WHERE id = :id LIMIT 1");
+$stmt->execute(['id' => $current_compte]);
+$last_login = $stmt->fetchColumn();
 
 // Fetch prenom only
+$current_account_id = $_SESSION['id'];
 $stmt = $pdo->prepare("SELECT prenom FROM compte WHERE id = :id LIMIT 1");
 $stmt->execute(['id' => $current_account_id]);
 $prenom = $stmt->fetchColumn();
@@ -96,16 +125,16 @@ $prenom = $stmt->fetchColumn();
 <!-- Horizontal stats -->
 <div class="stats-container-horizontal">
 <div class="stat-box">
-<div class="stat-title"><span class="color-box green"></span>Commentaires envoyés</div>
+<div class="stat-title"><span class="color-box tspace green"></span>Commentaires</div>
 <div class="stat-value"><?= $total_comments ?></div>
 </div>
 <div class="stat-box">
-<div class="stat-title"><span class="color-box orange"></span>Participations</div>
+<div class="stat-title"><span class="color-box tspace orange"></span>Participations</div>
 <div class="stat-value"><?= $total_participations ?></div>
 </div>
 <div class="stat-box">
-<div class="stat-title"><span class="color-box purple"></span>Time</div>
-<div class="stat-value"><?= $total_logins ?></div>
+<div class="stat-title"><span class="color-box tspace bleu"></span>Last Time</div>
+<div class="stat-value"> <?= htmlspecialchars($last_login ? date('H:i:s', strtotime($last_login)) : '-') ?></div>
 </div></div>
 
 <!-- Content title & description -->
@@ -132,20 +161,25 @@ change se que vous voulez ici, tout à votre Service.
 <canvas id="circleChart" width="300" height="300"></canvas>
 <div class="stats-info">
 <div class="stat">
-<div><span class="color-box blue"></span>Comptes</div>
-<span class="value"><?= $percent_comptes ?>%</span>
+<div><span class="color-box yellow"></span>Participations</div>
+<span class="value"><?= $total_participations ?>%</span>
 </div>
 <div class="stat">
-<div><span class="color-box yellow"></span>Commentaires</div>
+<div><span class="color-box green"></span>Commentaires</div>
 <span class="value"><?= $percent_avis ?>%</span>
+</div>
+<div class="stat">
+<div><span class="color-box bleu"></span>Commentaires</div>
+<span class="value"><?= $total_compte ?>%</span>
 </div></div></div>
 </div>
 </div></div></div>
 
 
 <script>
-const totalComptes = <?= $total_comptes ?>;
 const totalAvis = <?= $total_avis ?>;
+const total_participations = <?= $total_participations ?>;
+const total_compte = <?= $total_compte ?>;
 </script>
 
 <!-- Space -->

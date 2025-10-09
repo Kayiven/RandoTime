@@ -6,6 +6,17 @@ session_start();
 // Get user info from session
 $userName  = $_SESSION['user_nom']  ?? 'Invité';
 $userEmail = $_SESSION['user_email'] ?? '';
+
+require_once '../../../database/Configs/connection_db.php';
+
+$current_compte = $_SESSION['id'] ?? null;
+$userData = [];
+
+if ($current_compte) {
+$stmt = $pdo->prepare("SELECT nom, prenom, email, photo FROM compte WHERE id = :id LIMIT 1");
+$stmt->execute(['id' => $current_compte]);
+$userData = $stmt->fetch(PDO::FETCH_ASSOC);
+}
 ?>
 
 <!-- Navbar::FlexNav -->
@@ -25,7 +36,7 @@ $userEmail = $_SESSION['user_email'] ?? '';
 <input type="text" placeholder="Search..." id="searchInput" autocomplete="off"></li>
 <div class="suggestions" id="suggestions"></div>
 <li><img src="../../../Asset/FlexIcons/mode.png" class="profile-img"></li>
-<li><img src="../../../Asset/FlexIcons/profile_user.png" class="profile-img"  onclick="compte3()" id="seasion-compte3"></ul></div>
+<li><img src="<?php echo htmlspecialchars($userData['photo'] ? '../../../Asset/Uploads/' . $userData['photo'] : '../../../Asset/FlexIcons/profile_user.png'); ?>" class="profile-img1"  onclick="compte3()" id="seasion-compte3"></ul></div>
 <!-- Navbar::Flexplus -->
 <div class="box-flexplus2" id="box-flexplus">
 <ul class="list-v001">
@@ -36,7 +47,7 @@ $userEmail = $_SESSION['user_email'] ?? '';
 <div class="seasion-options" id="seasion-op">
 <li class="seasion_email"><?php echo htmlspecialchars($_SESSION['email']); ?></li>
 <li class="seasion_pic">
-<img src="<?php echo htmlspecialchars($_SESSION['profile_image']); ?>" 
+<img src="<?php echo htmlspecialchars($userData['photo'] ? '../../../Asset/Uploads/' . $userData['photo'] : '../../../Asset/FlexIcons/profile_user.png'); ?>" 
 alt="Profile Picture" class="seasion-pic" ></li>
 <li class="seasion_nom">Welcome, <b><?php echo htmlspecialchars($_SESSION['nom']);?></b> !</li>
 <li><input type="submit" value="Parametre" class="Parametre" formaction="../../Seassion/Inscrit/Profile.php"></li>

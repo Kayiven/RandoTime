@@ -10,7 +10,6 @@
 .dashboard-wrapper {
   display: flex;
   gap: 30px;
-
 }
 
 .sidebar h2 {
@@ -49,10 +48,9 @@
   color: #999999;
 }
 
-
 canvas {
-  width: 300px ;
-  height: 300px ;
+  width: 300px;
+  height: 300px;
 }
 
 .stats-info {
@@ -77,16 +75,22 @@ canvas {
   width: 15px;
   height: 15px;
   border-radius: 3px;
-  display: inline-block;
-  margin-right: 6px;
-}
-
-.blue {
-  background-color: #004A7E;
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+  margin-bottom: 5px;
 }
 
 .yellow {
+  background-color: #f0811f;
+}
+
+.green {
   background-color: #669c24;
+}
+
+.bleu {
+  background-color: #004a7e;
 }
 
 /* Horizontal stats container */
@@ -100,8 +104,8 @@ canvas {
 .stat-box {
   background: #fff;
   margin-top: 90px;
-  padding: 20px;
-  width: 272PX;
+  padding: 21.5px;
+  width: 272px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,14 +114,17 @@ canvas {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
+.tspace {
+  margin: 5px;
+}
+
 .stat-title {
   display: flex;
   align-items: center;
   font-size: 0.95em;
   color: #555;
   margin-bottom: 18px;
-   font-family: Arial, Helvetica, sans-serif;
-    
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .stat-title .color-box {
@@ -128,7 +135,8 @@ canvas {
 .stat-value {
   font-weight: bold;
   font-size: 1.3em;
-  color: #333;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 
 /* Content box */
@@ -148,7 +156,7 @@ canvas {
 
 .user-info-box p {
   margin: 6px 0;
-  margin-bottom: 15PX;
+  margin-bottom: 15px;
   color: #555;
 }
 
@@ -158,7 +166,7 @@ canvas {
   background: #fff;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
-  margin-right: 50PX;
+  margin-right: 50px;
   text-align: center;
 }
 
@@ -171,29 +179,28 @@ canvas {
   background-color: #f0811f;
 }
 
-.purple {
-  background-color: #004A7E;
+.bleu {
+  background-color: #004a7e;
 }
 
-.dashboard h2{
- margin-bottom: 20px;
+.dashboard h2 {
+  margin-bottom: 20px;
 }
 
-.dashboard{
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- font-size: 12px;
- margin-top: 90px;
- height: 470px;
-}
-
-.content-title{
+.dashboard {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
- font-size: 20px;
- margin-bottom: 14px;
+  font-size: 12px;
+  margin-top: 90px;
+  height: 470px;
+}
+
+.content-title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  margin-bottom: 14px;
 }
 
 .content-description {
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
 }
-
