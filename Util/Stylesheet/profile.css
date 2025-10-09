@@ -43,7 +43,7 @@
   transition: background 0.3s;
 }
 .submenu a.active {
-  color: #669c24;
+  color: #f0811f;
 }
 .submenu a:hover {
   color: #999999;
@@ -82,11 +82,11 @@ canvas {
 }
 
 .blue {
-  background-color: #2196f3;
+  background-color: #004A7E;
 }
 
 .yellow {
-  background-color: #ffca28;
+  background-color: #669c24;
 }
 
 /* Horizontal stats container */
@@ -164,15 +164,15 @@ canvas {
 
 /* Colors for stats boxes */
 .green {
-  background-color: #4caf50;
+  background-color: #669c24;
 }
 
 .orange {
-  background-color: #ff9800;
+  background-color: #f0811f;
 }
 
 .purple {
-  background-color: #9c27b0;
+  background-color: #004A7E;
 }
 
 .dashboard h2{
@@ -196,3 +196,4 @@ canvas {
  font-family: Verdana, Geneva, Tahoma, sans-serif;
  font-size: 14px;
 }
+

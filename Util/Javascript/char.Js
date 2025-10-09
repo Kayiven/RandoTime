@@ -4,8 +4,8 @@ data: {
 labels: ['Comptes', 'Commentaires'],
 datasets: [{
 data: [totalComptes, totalAvis],
-backgroundColor: ['#2196f3', '#ffca28'],
-hoverBackgroundColor: ['#1976d2', '#fbc02d'],
+backgroundColor: ['#004A7E', '#669c24'],
+hoverBackgroundColor: ['#004A7E', '#669c24'],
 borderWidth: 0
 }]
 },

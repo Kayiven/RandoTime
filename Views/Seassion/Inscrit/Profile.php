@@ -7,7 +7,6 @@ header("Location: ../Invité/Login.php");
 exit;
 }
 
-
 // === Fetch total numbers ===
 $stmt = $pdo->query("SELECT COUNT(*) FROM compte");
 $total_comptes = (int)$stmt->fetchColumn();
@@ -68,14 +67,14 @@ $prenom = $stmt->fetchColumn();
 <!-- Rappler le taskbar dans Acceuil -->
 <?php require '../../Componet/navbar/navbar_v3.php';?>
 
-
+<!-- Dashboard -->
 <div class="dashboard-wrapper">
 <div class="sidebar">
 <h2>Dashboard</h2>
 <div class="category active">Controle</div>
 <div class="submenu">
 <a href="./Profile.php" class="active">View Profile</a>
-<a href="#">View commentaire</a>
+<a href="./Commentaires.php">View commentaire</a>
 </div>
 <div class="category active">History</div>
 <div class="submenu">
@@ -120,10 +119,10 @@ change se que vous voulez ici, tout à votre Service.
 
 <!-- User info box -->
 <div class="user-info-box">
-<p><strong>Nom:</strong> <?php echo htmlspecialchars($_SESSION['nom']);?></p>
-<p><strong>Prenom:</strong> <?php echo htmlspecialchars($prenom); ?></p>
-<p><strong>Email:</strong> <?php echo htmlspecialchars($_SESSION['email']); ?></p>
-<p><strong>Mot de passe:</strong> ********</p>
+<p><strong>Nom :</strong> <?php echo htmlspecialchars($_SESSION['nom']);?></p>
+<p><strong>Prenom :</strong> <?php echo htmlspecialchars($prenom); ?></p>
+<p><strong>Email :</strong> <?php echo htmlspecialchars($_SESSION['email']); ?></p>
+<p><strong>Mot de passe :</strong> ********</p>
 </div></div>
 
 <!-- Right column: donut chart -->
@@ -135,12 +134,10 @@ change se que vous voulez ici, tout à votre Service.
 <div class="stat">
 <div><span class="color-box blue"></span>Comptes</div>
 <span class="value"><?= $percent_comptes ?>%</span>
-<small>(<?= $total_comptes ?>)</small>
 </div>
 <div class="stat">
 <div><span class="color-box yellow"></span>Commentaires</div>
 <span class="value"><?= $percent_avis ?>%</span>
-<small>(<?= $total_avis ?>)</small>
 </div></div></div>
 </div>
 </div></div></div>

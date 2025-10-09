@@ -83,7 +83,7 @@
 }
 .container_filter input[type="text"]:focus,
 .container_filter input[type="date"]:focus {
- border-color: #007bff;
+ border-color: #004A7E;
  outline: none;
 }
 
@@ -97,7 +97,7 @@
 }
 .container_filter input[type="checkbox"] {
  margin-right: 6px;
- accent-color: #007bff;
+ accent-color: #004A7E;
 }
 .page-container {
  display: flex;
@@ -163,10 +163,10 @@
 .star {
  width: 25px;
  height: 25px;
- fill: #ccc;
+ fill: #f0811f;
 }
 .star.filled {
- fill: #f4c542;
+ fill: #f0811f;
 }
 .card-details {
  display: flex;
@@ -196,13 +196,17 @@
 }
 .card-info button {
  padding: 7px 20px;
- background: #007bff;
+ background: #004A7E;
  color: white;
  border: none;
  margin-left: 400%;
  border-radius: 6px;
  cursor: pointer;
  width: 150px;
+}
+
+.card-info button:hover{
+  background: #00497ee0;
 }
 
 /* Pagination */
@@ -220,11 +224,11 @@
  text-decoration: none;
 }
 .pagination a.active {
- background: #007bff;
+ background: #004A7E;
  color: #fff;
 }
 .pagination a:hover {
- background: #007bff;
+ background: #004A7E;
  color: #fff;
  transition: 0.3s;
 }
@@ -240,7 +244,7 @@ hr.space {
 #filterBtn {
  width: 100%;
  padding: 10px;
- background: #007bff;
+ background: #004A7E;
  color: #fff;
  font-weight: bold;
  border: none;
@@ -250,5 +254,5 @@ hr.space {
  transition: 0.3s;
 }
 #filterBtn:hover {
- background: #0056b3;
+ background: #00497ee0;
 }

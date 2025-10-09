@@ -77,16 +77,16 @@
  text-decoration: none;
 }
 .btn-connect:hover {
- background-color: #1b5e20;
+ background-color: rgba(86, 131, 31, 0.843);
 }
-.li-Parametre:hover {
- background-color: #1b5e20;
+.Parametre:hover {
+ background-color: rgba(86, 131, 31, 0.843);
 }
-.li-Disconnect:hover {
- background-color: #1b5e20;
+.Disconnect:hover {
+ background-color: rgba(86, 131, 31, 0.843);
 }
 .search input:focus {
- border-color: #007bff;
+ border-color: #004A7E;
 }
 .search {
  position: relative;
@@ -118,7 +118,7 @@
  z-index: 19;
 }
 .btn-connect {
- background-color: #2e7d32;
+ background-color: #669c24;
  border: none;
  color: white;
  padding: 7px 20px;
