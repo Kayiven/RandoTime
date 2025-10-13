@@ -31,7 +31,7 @@ $stmt->execute([$full_name]);
 $total_avis = (int)$stmt->fetchColumn();
 
 // Count participations of this user
-$stmt = $pdo->prepare("SELECT COUNT(*) FROM reservations WHERE nom = ? AND prenom = ?");
+$stmt = $pdo->prepare("SELECT COUNT(*) FROM payments WHERE nom = ? AND prenom = ?");
 $stmt->execute([$nom, $prenom]);
 $total_participations = (int)$stmt->fetchColumn();
 
@@ -91,7 +91,6 @@ $prenom = $stmt->fetchColumn();
 </HEAD>
 
 <BODY>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- Rappler le taskbar dans Acceuil -->
 <?php require '../../Componet/navbar/navbar_v3.php';?>
@@ -107,7 +106,7 @@ $prenom = $stmt->fetchColumn();
 </div>
 <div class="category active">History</div>
 <div class="submenu">
-<a href="#">View Payement</a>
+<a href="./history_payement.php">View Payement</a>
 </div>
 <div class="category active">Paramettre</div>
 <div class="submenu">
@@ -169,21 +168,20 @@ change se que vous voulez ici, tout à votre Service.
 <span class="value"><?= $percent_avis ?>%</span>
 </div>
 <div class="stat">
-<div><span class="color-box bleu"></span>Commentaires</div>
+<div><span class="color-box bleu"></span>TotalComptes</div>
 <span class="value"><?= $total_compte ?>%</span>
 </div></div></div>
 </div>
 </div></div></div>
 
+<!-- Recall full code of char -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
 const totalAvis = <?= $total_avis ?>;
 const total_participations = <?= $total_participations ?>;
 const total_compte = <?= $total_compte ?>;
 </script>
-
-<!-- Space -->
-<div class="space"></div>
 
 <!-- Footer -->
 <footer class="footer">

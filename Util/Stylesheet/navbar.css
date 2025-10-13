@@ -46,7 +46,7 @@
  font-family: Verdana, Geneva, Tahoma, sans-serif;
  gap: 20px;
  align-items: center;
- margin-left: 564px;
+ margin-left: 609.7px;
 }
 .list-v001 {
  display: flex;
@@ -147,6 +147,7 @@ font-size: 14px;
 .profile-img1{
  height: 33px;
  width: 33px;
+ margin-top: 3px;
  border-radius: 30px;
  border: 1px solid rgba(0, 0, 0, 0.663);
 }

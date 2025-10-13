@@ -1,48 +1,35 @@
-<!-- Verification -->
 <?php session_start();
-require_once '../../../DataBase/Configs/connection_db.php';
 // Verify if compte open or not !
 if (!isset($_SESSION['id'])) {
 header("Location: ../Invité/Login.php");
 exit;
 }
 
-$current_compte = $_SESSION['id'] ?? null;
-$commentaires = [];
-$userData = [];
+require_once '../../../DataBase/Configs/connection_db.php';
 
-// Fetch nom, prenom, and photo for the logged-in user (for posting new comments)
-if ($current_compte) {
-$stmt = $pdo->prepare("SELECT nom, prenom, photo FROM compte WHERE id = :id LIMIT 1");
-$stmt->execute(['id' => $current_compte]);
-$userData = $stmt->fetch(PDO::FETCH_ASSOC);
-}
+// Get values from users compte
+$nom = $_SESSION['nom'];
+$prenom = $_SESSION['prenom'];
 
-// Fetch all comments (no filtering, show all)
-$stmt = $pdo->prepare("SELECT * FROM Avis_participants ORDER BY date ASC");
-$stmt->execute();
-$commentaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// Handle new comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['commentaire'])) {
-if ($userData) {
-$nom = $userData['nom'];
-$prenom = $userData['prenom'];
-$photo = $userData['photo'] ?? '../../Asset/FlexIcons/profile_user.png';
-$commentaire = htmlspecialchars($_POST['commentaire']);
-
-// Combine nom + prenom to store together
-$full_name = trim("$nom $prenom");
-
-// Insert new comment
+// ✅ Fetch stats only for this user
 $stmt = $pdo->prepare("
-INSERT INTO Avis_participants (prenom, photo, commentaire)
-VALUES (?, ?, ?)");
-$stmt->execute([$full_name, $photo, $commentaire]);
+SELECT COUNT(*) AS total_payments, COALESCE(SUM(price), 0) AS total_amount
+FROM Payments
+WHERE nom = ? AND prenom = ?
+");
+$stmt->execute([$nom, $prenom]);
+$stats = $stmt->fetch(PDO::FETCH_ASSOC);
 
-header("Location: commentaires.php");
-exit;
-}}?>
+// ✅ Fetch payment history only for this user
+$stmt = $pdo->prepare("
+SELECT id, localisation, payment_method, price, status, created_at
+FROM Payments
+WHERE nom = ? AND prenom = ?
+");
+$stmt->execute([$nom, $prenom]);
+$payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+?>
 
 <!DOCTYPE HTML>
 <HTML lang="en">
@@ -52,14 +39,15 @@ exit;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="Description" content="width=device-width, initial-scale=1">
 <meta name="KeyWords" content="width=device-width, initial-scale=1">
-<title>Profile</title>
+<title>history Payement</title>
 <link href="../../../Util/Stylesheet/navbar.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/footer.css" rel="stylesheet">
 <link href="../../../Util/Stylesheet/global.css" rel="stylesheet">
-<link href="../../../Util/Stylesheet/Commentaires.css" rel="stylesheet">
+<link href="../../../Util/Stylesheet/sliders.css" rel="stylesheet">
+<link href="../../../Util/Stylesheet/history_paym.css" rel="stylesheet">
 </HEAD>
-<BODY>
 
+<BODY>
 <!-- Rappler le taskbar dans Acceuil -->
 <?php require '../../Componet/navbar/navbar_v3.php';?>
 
@@ -70,46 +58,65 @@ exit;
 <div class="category active">Controle</div>
 <div class="submenu">
 <a href="./Profile.php">View Profile</a>
-<a href="./Commentaires.php" class="active">View commentaire</a>
+<a href="./Commentaires.php">View commentaire</a>
 </div>
 <div class="category active">History</div>
 <div class="submenu">
-<a href="./history_payement.php">View Payement</a>
+<a href="#" class="active">View Payement</a>
 </div>
 <div class="category active">Paramettre</div>
 <div class="submenu">
-<a href="../../../DataBase/Actions/disconnect-sys.php">Deconnection</a>
+<a href="../../../DataBase/Actions/disconnect-sys.php">Deconnection</a></div>
 </div></div>
 
-<!-- Main Content -->
-<div class="comment-section">
-<div class="user-header">
-<img src="../../../Asset/Uploads/<?= htmlspecialchars($userData['photo'] ?? '../../Asset/FlexIcons/profile_user.png') ?>" alt="photo" class="profile-photo">
-<h3><?= htmlspecialchars($userData['nom'] . ' ' . $userData['prenom']) ?></h3>
-</div><h4>Vos Commentaires</h4><BR>
-<div class="comment-box">
-<?php if (!empty($commentaires)): ?>
-<?php foreach ($commentaires as $c): ?>
-<div class="comment">
-<div class="comment-header">
-<!-- Use the photo stored in the comment, not logged-in user -->
-<img src="../../../Asset/Uploads/<?= htmlspecialchars($c['photo'] ?? 'profile_user.png') ?>" 
-alt="photo" class="comment-photo">
-<span class="comment-name"><?= htmlspecialchars($c['prenom']) ?></span>
-<span class="comment-date"><?= htmlspecialchars($c['date']) ?></span>
-</div>
-<p class="comment-text"><?= htmlspecialchars($c['commentaire']) ?></p></div>
-<?php endforeach; ?>
-<?php else: ?>
-<p class="no-comment">Aucun commentaire pour le moment.</p>
-<?php endif; ?>
-</div>
-
-<form method="POST" class="comment-form">
-<textarea name="commentaire" placeholder="Écrire un commentaire..." required></textarea>
-<button type="submit">Envoyer</button>
-</form></div>
-</div>
+<!-- Main -->
+  <div class="main-content">
+    <h1>History Payements</h1>
+     <!-- Stats --> 
+      <div class="stats-container">
+        <div class="stat-card"> <h3>Total Payments</h3>
+         <p><?= $stats['total_payments']; ?></p>
+         </div> 
+         <div class="stat-card"> 
+          <h3>Total Amount</h3> 
+          <p><?= number_format($stats['total_amount'], 2); ?> TND</p>
+          </div> </div> 
+               <!-- Table --> 
+<div class="table-container">
+  <h2>Recent Payments</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Localisation</th>
+          <th>Method</th>
+          <th>Price (TND)</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php if ($payments): ?>
+          <?php foreach ($payments as $payment): ?>
+            <tr>
+              <td><?= htmlspecialchars($payment['id']); ?></td>
+              <td><?= htmlspecialchars($payment['localisation']); ?></td>
+              <td><?= htmlspecialchars($payment['payment_method']); ?></td>
+              <td><?= number_format($payment['price'], 2); ?></td>
+              <td><?= htmlspecialchars($payment['status']); ?></td>
+              <td><?= htmlspecialchars($payment['created_at']); ?></td>
+            </tr>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <tr>
+            <td colspan="6" style="text-align:center;">No payments found</td>
+          </tr>
+        <?php endif; ?>
+      </tbody>
+    </table>
+  </div>
+</div></div>
 
 <!-- Footer -->
 <footer class="footer">
@@ -168,7 +175,13 @@ Réservez, partez et vivez l’aventure !</p></div>
 
 <!-- Javascript Requirement -->
 <script src="../../../Util/Javascript/dropdown.js"></script>
+<script src="../../../Util/Javascript/sliders-v2.js"></script>
+<script src="../../../Util/Javascript/animation.js"></script>
 <script src="../../../Util/Javascript/datalist1.js"></script>
+<script src="../../../Util/Javascript/modal.js"></script>
 
 </BODY>
 </HTML>
+
+
+</BODY>

@@ -199,11 +199,12 @@ echo '<svg viewBox="0 0 24 24" class="star"><path d="M22 9.24l-7.19-.62L12 2 9.1
 </div>
 <div class="detail">
 <div class="label">Children</div>
+
 <div class="value"><?= htmlspecialchars($place['children']) ?></div>
 </div>
 <div class="detail">
 <div class="label">Price</div>
-<div class="value">$<?= htmlspecialchars($place['price']) ?></div>
+<div class="value"><?= htmlspecialchars($place['price']) ?> TND</div>
 </div>
 <div class="detail">
 <div class="label">Status</div>

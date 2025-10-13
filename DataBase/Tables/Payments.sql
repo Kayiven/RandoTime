@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS Payments(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nom VARCHAR(255) NOT NULL,
+prenom VARCHAR(255) NOT NULL,
+localisation VARCHAR(255) NOT NULL,
+payment_method VARCHAR(50),
+price DECIMAL(10,2) NOT NULL,
+status ENUM('pending','confirmed','cancelled') DEFAULT 'confirmed',
+created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

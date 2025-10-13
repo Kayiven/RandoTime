@@ -16,8 +16,7 @@ if ($current_compte) {
 $stmt = $pdo->prepare("SELECT nom, prenom, email, photo FROM compte WHERE id = :id LIMIT 1");
 $stmt->execute(['id' => $current_compte]);
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
-}
-?>
+}?>
 
 <!-- Navbar::FlexNav -->
 <div class="navbar_v1">
@@ -35,7 +34,6 @@ $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 <span class="icon">🔍</span>
 <input type="text" placeholder="Search..." id="searchInput" autocomplete="off"></li>
 <div class="suggestions" id="suggestions"></div>
-<li><img src="../../../Asset/FlexIcons/mode.png" class="profile-img"></li>
 <li><img src="<?php echo htmlspecialchars($userData['photo'] ? '../../../Asset/Uploads/' . $userData['photo'] : '../../../Asset/FlexIcons/profile_user.png'); ?>" class="profile-img1"  onclick="compte3()" id="seasion-compte3"></ul></div>
 <!-- Navbar::Flexplus -->
 <div class="box-flexplus2" id="box-flexplus">

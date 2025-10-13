@@ -89,7 +89,7 @@ error_log("⚠️ Query avis failed: " . $e->getMessage()); }}?>
 <div class="testimonial-container">
 <?php foreach ($avis as $a): ?>
 <div class="testimonial">
-<img src="../../Asset/Catagorie/<?= htmlspecialchars($a['photo']) ?>" alt="<?= htmlspecialchars($a['prenom']) ?>">
+<img src="../../../Asset/Catagorie/<?= htmlspecialchars($a['photo']) ?>" alt="<?= htmlspecialchars($a['prenom']) ?>">
 <h4><?= htmlspecialchars($a['prenom']) ?></h4>
 <p><?= htmlspecialchars($a['commentaire']) ?></p></div>
 <?php endforeach; ?>
@@ -107,48 +107,46 @@ error_log("⚠️ Query avis failed: " . $e->getMessage()); }}?>
 Réservez, partez et vivez l’aventure !</p></div>
 <div class="footer-section">
 <h4>Navigation</h4><ul>
-<li><a href="#">Acceuil</a></li>
-<li><a href="#">Apropos</a></li>
-<li><a href="#">Destinations</a></li>
-<li><a href="#">Événements</a></li>
+<li><a href="./Acceuil.php">Acceuil</a></li>
+<li><a href="./Apropos.php">Apropos</a></li>
+<li><a href="./Evenements.php">Événements</a></li>
+<li><a href="./Galarie.php">Galarie</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Extension</h4><ul>
-<li><a href="#">Galarie</a></li>
-<li><a href="#">Contact</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">FAQ</a></li>
+<li><a href="./Contact.php">Contact</a></li>
+<li><a href="./Faq.php">FAQ</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Placement</h4><ul>
-<li><a href="#">plage tabarka</a></li>
-<li><a href="#">Ribat Monastir</a></li>
-<li><a href="#">Kairouan Mosque</a></li>
-<li><a href="#">Villes anciennes</a></li>
+<li><a href="javascript:void(0);" onclick="alert('⚠️ Vous devez avoir un compte pour continuer'); window.location.href='./login.php';">plage tabarka</a></li>
+<li><a href="javascript:void(0);" onclick="alert('⚠️ Vous devez avoir un compte pour continuer'); window.location.href='./login.php';">Ribat Monastir</a></li>
+<li><a href="javascript:void(0);" onclick="alert('⚠️ Vous devez avoir un compte pour continuer'); window.location.href='./login.php';">Kairouan Mosque</a></li>
+<li><a href="javascript:void(0);" onclick="alert('⚠️ Vous devez avoir un compte pour continuer'); window.location.href='./login.php';">Villes anciennes</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>More</h4><ul>
-<li><a href="#">canyon tamerza</a></li>
-<li><a href="#">Médina Tunis</a></li>
-<li><a href="#">sidi bou said</a></li>
-<li><a href="#">hammamet</a></li>
+<li><a href="javascript:void(0);" onclick="alert('⚠️ Vous devez avoir un compte pour continuer'); window.location.href='./login.php';">canyon tamerza</a></li>
+<li><a href="javascript:void(0);" onclick="alert('⚠️ Vous devez avoir un compte pour continuer'); window.location.href='./login.php';">Médina Tunis</a></li>
+<li><a href="javascript:void(0);" onclick="alert('⚠️ Vous devez avoir un compte pour continuer'); window.location.href='./login.php';">sidi bou said</a></li>
+<li><a href="javascript:void(0);" onclick="alert('⚠️ Vous devez avoir un compte pour continuer'); window.location.href='./login.php';">hammamet</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Social</h4><ul>
-<li><a href="#">Facebook</a></li>
-<li><a href="#">Instagram</a></li>
-<li><a href="#">twitter</a></li>
-<li><a href="#">Reddit</a></li>
+<li><a href="https://www.facebook.com">Facebook</a></li>
+<li><a href="https://www.instagram.com">Instagram</a></li>
+<li><a href="https://x.com">twitter</a></li>
+<li><a href="https://www.reddit.com">Reddit</a></li>
 </ul></div>
 <div class="footer-contact">
 <h4>Contact</h4>
 <p>📞 +216 90 000 000</p>
 <p>📧 contact@rondotime.tn</p>
 <div class="social-icons">
-<a href="#"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
-<a href="#"><img src="../../../Asset/FlexIcons//instagram.png" alt="Instagram"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
+<a href="https://www.facebook.com"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
+<a href="https://www.instagram.com"><img src="../../../Asset/FlexIcons//instagram.png" alt="Instagram"></a>
+<a href="https://x.com"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
+<a href="https://www.reddit.com"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
 </div></div></div>
 <div class="footer-bottom">
 &copy; 2025 RondoTime. Tous droits réservés.</div></footer>

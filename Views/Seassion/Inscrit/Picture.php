@@ -96,7 +96,7 @@ error_log("⚠️ Query avis failed: " . $e->getMessage()); }}?>
 <div class="testimonial-container">
 <?php foreach ($avis as $a): ?>
 <div class="testimonial">
-<img src="../../Asset/Catagorie/<?= htmlspecialchars($a['photo']) ?>" alt="<?= htmlspecialchars($a['prenom']) ?>">
+<img src="../../../Asset/Catagorie/<?= htmlspecialchars($a['photo']) ?>" alt="<?= htmlspecialchars($a['prenom']) ?>">
 <h4><?= htmlspecialchars($a['prenom']) ?></h4>
 <p><?= htmlspecialchars($a['commentaire']) ?></p></div>
 <?php endforeach; ?>

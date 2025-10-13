@@ -35,6 +35,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <!-- Rappler le taskbar dans Acceuil -->
 <?php require '../../Componet/navbar/navbar_v3.php';?>
 
+
 <!-- Slider -->
 <div class="Sliders">
 <div class="Slide active">

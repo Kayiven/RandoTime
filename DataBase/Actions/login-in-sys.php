@@ -41,6 +41,7 @@ exit;
 unset($_SESSION['old_username']);
 $_SESSION['id']    = $user['id'];
 $_SESSION['nom']   = $user['nom'];
+$_SESSION['prenom']   = $user['prenom'];
 $_SESSION['email'] = $user['email'];
 
 $current_compte = $user['id'];
