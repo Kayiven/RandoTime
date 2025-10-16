@@ -32,7 +32,7 @@ exit;
 }
 
 if (!password_verify($password, $user['motpass'])) {
-$_SESSION['login-pwd-error'] = "Error > Le password que vous avez mis est incorrect!";
+$_SESSION['login-pwd-error'] = "Error > Le Mot de passe que vous avez mis est incorrect!";
 header('Location: ../../Views/Seassion/Invité/Login.php');
 exit;
 }

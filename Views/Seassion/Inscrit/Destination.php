@@ -113,7 +113,7 @@ $places = $stmt->fetchAll(PDO::FETCH_ASSOC); ?>
 <form method="get" class="container_filter">
 <div class="container_tab">
 <div class="Name_filter">By Filter</div>
-<input type="text" placeholder="Name" name="name" value="<?= htmlspecialchars($_GET['name'] ?? '') ?>">
+<input type="text" placeholder="Nom de place" name="name" value="<?= htmlspecialchars($_GET['name'] ?? '') ?>">
 </div><hr class="space">
 
 <div class="container_stars">
@@ -129,8 +129,8 @@ $places = $stmt->fetchAll(PDO::FETCH_ASSOC); ?>
 </div><hr class="space">
 
 <div class="container-price">
-<div class="Name-price">Max Price</div>
-<input type="text" name="price" id="Price" value="<?= htmlspecialchars($_GET['price'] ?? '') ?>">
+<div class="Name-price">Max Prix</div>
+<input type="text" name="price" id="Price"  placeholder="Prix maximum" value="<?= htmlspecialchars($_GET['price'] ?? '') ?>">
 </div><hr class="space">
 
 <div class="container_Adults">
@@ -183,7 +183,7 @@ echo '<svg viewBox="0 0 24 24" class="star"><path d="M22 9.24l-7.19-.62L12 2 9.1
 
 <!-- BOOK NOW BUTTON -->
 <form method="post">
-<button formaction="<?= htmlspecialchars($place['link']) ?>">Book Now</button>
+<button formaction="<?= htmlspecialchars($place['link']) ?>">More Détaille</button>
 </form>
 </div>
 
@@ -198,12 +198,12 @@ echo '<svg viewBox="0 0 24 24" class="star"><path d="M22 9.24l-7.19-.62L12 2 9.1
 <div class="value"><?= htmlspecialchars($place['adults']) ?></div>
 </div>
 <div class="detail">
-<div class="label">Children</div>
+<div class="label">Enfants</div>
 
 <div class="value"><?= htmlspecialchars($place['children']) ?></div>
 </div>
 <div class="detail">
-<div class="label">Price</div>
+<div class="label">Prix</div>
 <div class="value"><?= htmlspecialchars($place['price']) ?> TND</div>
 </div>
 <div class="detail">
@@ -238,17 +238,15 @@ $url = '?'.http_build_query($queryParams); ?>
 Réservez, partez et vivez l’aventure !</p></div>
 <div class="footer-section">
 <h4>Navigation</h4><ul>
-<li><a href="#">Acceuil</a></li>
-<li><a href="#">Apropos</a></li>
-<li><a href="#">Destinations</a></li>
-<li><a href="#">Événements</a></li>
+<li><a href="./Home.php">Acceuil</a></li>
+<li><a href="./About.php">Apropos</a></li>
+<li><a href="./Destination.php">Destinations</a></li>
+<li><a href="./Picture.php">Galarie</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Extension</h4><ul>
-<li><a href="#">Galarie</a></li>
-<li><a href="#">Contact</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">FAQ</a></li>
+<li><a href="./Support.php">Contact</a></li>
+<li><a href="./Question.php">FAQ</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Placement</h4><ul>
@@ -266,20 +264,20 @@ Réservez, partez et vivez l’aventure !</p></div>
 </ul></div>
 <div class="footer-section">
 <h4>Social</h4><ul>
-<li><a href="#">Facebook</a></li>
-<li><a href="#">Instagram</a></li>
-<li><a href="#">twitter</a></li>
-<li><a href="#">Reddit</a></li>
+<li><a href="https://www.facebook.com">Facebook</a></li>
+<li><a href="https://www.instagram.com">Instagram</a></li>
+<li><a href="https://x.com">twitter</a></li>
+<li><a href="https://www.reddit.com">Reddit</a></li>
 </ul></div>
 <div class="footer-contact">
 <h4>Contact</h4>
 <p>📞 +216 90 000 000</p>
 <p>📧 contact@rondotime.tn</p>
 <div class="social-icons">
-<a href="#"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
-<a href="#"><img src="../../../Asset/FlexIcons//instagram.png" alt="Instagram"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
+<a href="https://www.facebook.com"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
+<a href="https://www.instagram.com"><img src="../../../Asset/FlexIcons/instagram.png" alt="Instagram"></a>
+<a href="https://x.com"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
+<a href="https://www.reddit.com"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
 </div></div></div>
 <div class="footer-bottom">
 &copy; 2025 RondoTime. Tous droits réservés.</div></footer>

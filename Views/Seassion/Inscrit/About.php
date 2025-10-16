@@ -63,46 +63,46 @@ moment inoubliable au cœur de la nature.</p>
 
 <!-- Mission and Values -->
 <section class="mission">
-<h2>Our Mission & Values</h2>
+<h2>Notre Mission Et Nos Valeurs</h2>
 <div class="mission-cards">
 <div class="card">
 <h3>Adventure</h3>
-<p>Delivering unique and safe hiking experiences.</p></div>
+<p>Offrir des expériences de randonnée uniques et sécurisées.</p></div>
 <div class="card">
-<h3>Sustainability</h3>
-<p>Committed to protecting the environment.</p></div>
+<h3>Durabilité</h3>
+<p>Engagé à protéger l'environnement.</p></div>
 <div class="card">
-<h3>Community</h3>
-<p>Building strong bonds with local communities.</p></div>
+<h3>Communauté</h3>
+<p>Établir des liens solides avec les communautés locales.</p></div>
 </div></section>
 
 <!-- Timeline -->
 <section class="timeline">
-<h2>Our Story</h2>
+<h2>Notre histoire</h2>
 <div class="timeline-container">
 <div class="timeline-item" data-aos="fade-right">
 <div class="timeline-year">2010</div>
 <div class="timeline-content">
-<h3>Founded</h3>
-<p>EcoHike Adventures was born with a mission to reconnect people with nature.</p>
+<h3>Fondé</h3>
+<p>RandoTime Adventures est née avec pour mission de reconnecter les gens à la nature.</p>
 </div></div>
 <div class="timeline-item">
 <div class="timeline-year">2015</div>
 <div class="timeline-content">
-<h3>First International Trip</h3>
-<p>We expanded beyond our local trails and guided our first group in Morocco.</p>
+<h3>Premier voyage international</h3>
+<p>Nous avons élargi nos horizons au-delà de nos sentiers locaux et avons guidé notre premier groupe en Tunisie.</p>
 </div></div>
 <div class="timeline-item">
 <div class="timeline-year">2018</div>
 <div class="timeline-content">
 <h3>10,000+ Clients</h3>
-<p>We reached a milestone by guiding over 10,000 adventurers safely.</p>
+<p>Nous avons atteint une étape importante en guidant plus de 10 000 aventuriers en toute sécurité.</p>
 </div></div>
 <div class="timeline-item">
 <div class="timeline-year">2020</div>
 <div class="timeline-content">
-<h3>Recognition</h3>
-<p>We were recognized as one of the top eco-friendly agencies worldwide.</p>
+<h3>Reconnaissance</h3>
+<p>Nous avons été reconnus comme l'une des principales agences Randonnée au monde.</p>
 </div></div>
 </div></section>
 
@@ -116,7 +116,7 @@ $stats['commentaires'] = $pdo->query("SELECT COUNT(*) FROM Avis_participants")->
 } catch (Exception $e) {
 error_log("⚠️ Stats query failed: " . $e->getMessage()); }}?>
 <section class="stats">
-<h2>Nos Stats</h2>
+<h2>Nos statistiques</h2>
 <div class="stats-cards">
 <div class="card">
 <h3><?= htmlspecialchars($stats['visiteurs']) ?></h3>
@@ -187,17 +187,15 @@ error_log("⚠️ Stats query failed: " . $e->getMessage()); }}?>
 Réservez, partez et vivez l’aventure !</p></div>
 <div class="footer-section">
 <h4>Navigation</h4><ul>
-<li><a href="#">Acceuil</a></li>
-<li><a href="#">Apropos</a></li>
-<li><a href="#">Destinations</a></li>
-<li><a href="#">Événements</a></li>
+<li><a href="./Home.php">Acceuil</a></li>
+<li><a href="./About.php">Apropos</a></li>
+<li><a href="./Destination.php">Destinations</a></li>
+<li><a href="./Picture.php">Galarie</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Extension</h4><ul>
-<li><a href="#">Galarie</a></li>
-<li><a href="#">Contact</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">FAQ</a></li>
+<li><a href="./Support.php">Contact</a></li>
+<li><a href="./Question.php">FAQ</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Placement</h4><ul>
@@ -215,20 +213,20 @@ Réservez, partez et vivez l’aventure !</p></div>
 </ul></div>
 <div class="footer-section">
 <h4>Social</h4><ul>
-<li><a href="#">Facebook</a></li>
-<li><a href="#">Instagram</a></li>
-<li><a href="#">twitter</a></li>
-<li><a href="#">Reddit</a></li>
+<li><a href="https://www.facebook.com">Facebook</a></li>
+<li><a href="https://www.instagram.com">Instagram</a></li>
+<li><a href="https://x.com">twitter</a></li>
+<li><a href="https://www.reddit.com">Reddit</a></li>
 </ul></div>
 <div class="footer-contact">
 <h4>Contact</h4>
 <p>📞 +216 90 000 000</p>
 <p>📧 contact@rondotime.tn</p>
 <div class="social-icons">
-<a href="#"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
-<a href="#"><img src="../../../Asset/FlexIcons//instagram.png" alt="Instagram"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
+<a href="https://www.facebook.com"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
+<a href="https://www.instagram.com"><img src="../../../Asset/FlexIcons/instagram.png" alt="Instagram"></a>
+<a href="https://x.com"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
+<a href="https://www.reddit.com"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
 </div></div></div>
 <div class="footer-bottom">
 &copy; 2025 RondoTime. Tous droits réservés.</div></footer>

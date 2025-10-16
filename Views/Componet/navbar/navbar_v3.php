@@ -3,6 +3,7 @@
 if (session_status() === PHP_SESSION_NONE) {
 session_start(); 
 }
+
 // Get user info from session
 $userName  = $_SESSION['user_nom']  ?? 'Invité';
 $userEmail = $_SESSION['user_email'] ?? '';
@@ -13,7 +14,7 @@ $current_compte = $_SESSION['id'] ?? null;
 $userData = [];
 
 if ($current_compte) {
-$stmt = $pdo->prepare("SELECT nom, prenom, email, photo FROM compte WHERE id = :id LIMIT 1");
+$stmt = $pdo->prepare("SELECT nom, prenom, role, email, photo FROM compte WHERE id = :id LIMIT 1");
 $stmt->execute(['id' => $current_compte]);
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 }?>
@@ -25,8 +26,8 @@ $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 <li><a href="../../Seassion/Inscrit/Home.php">Acceuil</a></li>
 <li><a href="../../Seassion/Inscrit/About.php">Apropos</a></li>
 <li><a href="../../Seassion/Inscrit/Destination.php">Destination</a></li>
-<li><a href="../../Seassion/Inscrit/evenements.php">Événements</a></li>
 <li><a href="../../Seassion/Inscrit/Picture.php">Galarie</a></li>
+<li><a href="../../Seassion/Inscrit/Support.php">Contact</a></li>
 <li><label class="more" onclick="more()" id="More">More</label></li></ul>
 <!-- Navbar::FlexExtension -->
 <ul class="list-v03">
@@ -38,15 +39,27 @@ $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 <!-- Navbar::Flexplus -->
 <div class="box-flexplus2" id="box-flexplus">
 <ul class="list-v001">
-<li><a href="../../Seassion/Inscrit/Support.php">Contact</a></li>
 <li><a href="../../Seassion/Inscrit/Question.php">FAQ</a></li></ul></div>
 <!-- Navbar::options -->
 <form action="#" method="post">
 <div class="seasion-options" id="seasion-op">
-<li class="seasion_email"><?php echo htmlspecialchars($_SESSION['email']); ?></li>
+<li class="seasion_email">
+<?php echo htmlspecialchars($_SESSION['email']); ?></li>
 <li class="seasion_pic">
-<img src="<?php echo htmlspecialchars($userData['photo'] ? '../../../Asset/Uploads/' . $userData['photo'] : '../../../Asset/FlexIcons/profile_user.png'); ?>" 
-alt="Profile Picture" class="seasion-pic" ></li>
-<li class="seasion_nom">Welcome, <b><?php echo htmlspecialchars($_SESSION['nom']);?></b> !</li>
+<img src="<?php echo htmlspecialchars($userData['photo'] 
+? '../../../Asset/Uploads/' . $userData['photo'] 
+: '../../../Asset/FlexIcons/profile_user.png'); ?>" 
+alt="Profile Picture" class="seasion-pic"></li>
+
+<li class="seasion_nom">
+Welcome, <b><?php echo htmlspecialchars($_SESSION['nom']); ?></b> !</li>
+
+<!-- ✅ Show Admin Dashboard only if role = Admin -->
+<?php if (!empty($userData['role']) && $userData['role'] === 'Admin'): ?>
+<li><input type="submit" value="Dashboard" class="Dashboard" formaction="../Admin/Dashboard-Admin.php"></li>
+<?php else: ?>
+<li class="no-dashboard"><u>No Dashboard Admin</u></li>
+<?php endif; ?>
 <li><input type="submit" value="Parametre" class="Parametre" formaction="../../Seassion/Inscrit/Profile.php"></li>
-<li><input type="submit" value="Disconnect" class="Disconnect" formaction="../../../DataBase/Actions/disconnect-sys.php"></li></div></form>
+<li><input type="submit" value="Disconnect" class="Disconnect" formaction="../../../DataBase/Actions/disconnect-sys.php"></li>
+</div></form>

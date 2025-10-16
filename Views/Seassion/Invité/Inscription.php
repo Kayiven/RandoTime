@@ -59,32 +59,32 @@
 </div></div>
 
 <div class="form-group">
-<label class="label">Password</label>
-<input type="password" name="register-password" placeholder="Sasir votre password (oubligatoir)">
+<label class="label">Mot de passe</label>
+<input type="password" name="register-password" placeholder="Sasir votre Mot de pass (oubligatoir)">
 <div class="error-pwd"><?= isset($_SESSION['error-pwd']) ? htmlspecialchars($_SESSION['error-pwd']) : '' ?>
 </div></div>
 
 <div class="form-group ">
-<label class="label">Confirm Password</label>
-<input type="password" name="register-confirm-password" placeholder="Confirm you password (oubligatoir)">
+<label class="label">Confirmer le mot de passe</label>
+<input type="password" name="register-confirm-password" placeholder="Confirm le mot de passe (oubligatoir)">
 <div class="error-pwd"><?= isset($_SESSION['error-pwd']) ? htmlspecialchars($_SESSION['error-pwd']) : '' ?>
 </div></div>
 
 <!-- custom radio -->
 <div class="form-group">
-<label class="label">Gender</label>
+<label class="label">Sexe</label>
 <div class="radio-group" id="genderGroup">
 <label class="radio-option">
 <input type="radio" name="gender" value="male" checked>
-<span class="custom-radio">Male</span></label>
+<span class="custom-radio">Homme</span></label>
 
 <label class="radio-option">
 <input type="radio" name="gender" value="female">
-<span class="custom-radio">Female</span></label>
+<span class="custom-radio">Femme</span></label>
 </div></div>
 
 <div class="form-group">
-<label class="label">Birthday</label>
+<label class="label">Date de naissance</label>
 <div class="birthday-group">
 <!-- Day -->
 <select name="birth-day" class="birthday-select" required>
@@ -152,7 +152,6 @@ Réservez, partez et vivez l’aventure !</p></div>
 <h4>Navigation</h4><ul>
 <li><a href="./Acceuil.php">Acceuil</a></li>
 <li><a href="./Apropos.php">Apropos</a></li>
-<li><a href="./Evenements.php">Événements</a></li>
 <li><a href="./Galarie.php">Galarie</a></li>
 </ul></div>
 <div class="footer-section">

@@ -24,9 +24,8 @@
 <img src="../../../Asset/Catagories/slider1.png" alt="slider Picture">
 <div class="slide-text">
 <h1>Découvrir Chebika </h1>
-<p>paragraph writing are indispensable parts of any English <br>
-writing comprehension syllabus. From lower grades to upper, all kinds 
-<br>of students.</p></div>
+<p>La rédaction de paragraphes est une partie indispensable <br>de tout programme de
+compréhension écrite en anglais. Des classes inférieures<br> aux classes supérieures,tous types d'élèves.</p></div>
 <div class="borders-on-image">
 <div class="border"></div>
 <div class="border"></div>
@@ -36,9 +35,8 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <img src="../../../Asset/Catagories/slider2.png" alt="slider Picture">
 <div class="slide-text">
 <h1>Découvrir CapBon </h1>
-<p>paragraph writing are indispensable parts of any English <br>
-writing comprehension syllabus. From lower grades to upper, all kinds 
-<br>of students.</p></div>
+<p>La rédaction de paragraphes est une partie indispensable <br>de tout programme de
+compréhension écrite en anglais. Des classes inférieures<br> aux classes supérieures,tous types d'élèves.</p></div>
 <div class="borders-on-image">
 <div class="border"></div>
 <div class="border"></div>
@@ -48,9 +46,8 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <img src="../../../Asset/Catagories/slider3.png" alt="slider Picture">
 <div class="slide-text">
 <h1>Découvrir Dahar </h1>
-<p>paragraph writing are indispensable parts of any English <br>
-writing comprehension syllabus. From lower grades to upper, all kinds 
-<br>of students.</p></div>
+<p>La rédaction de paragraphes est une partie indispensable <br>de tout programme de
+compréhension écrite en anglais. Des classes inférieures<br> aux classes supérieures,tous types d'élèves.</p></div>
 <div class="borders-on-image">
 <div class="border"></div>
 <div class="border"></div>
@@ -69,8 +66,8 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <label for="arrivee">Date de départ</label>
 <input type="date" id="depart" name="depart"></div>
 <div class="field-group">
-<label for="Price">Price</label>
-<input type="text" id="Price" name="Price" placeholder="Mettre ton prix"></div>
+<label for="Price">Prix</label>
+<input type="text" id="Price" name="Price" placeholder="Prix Maximum"></div>
 <div class="field-group">
 <label>Voyageurs</label>
 <div class="person-select">
@@ -104,7 +101,7 @@ onclick="alert('⚠️ Vous devez avoir un compte pour continuer');">Rechercher<
 <div class="simple-box">
 <img src="../../../Asset/FlexIcons/localisaton.png" alt="icon">
 <h4>Randonnées</h4>
-<p>Explore avec des guides locaux.</p></div>
+<p>Explorez avec des guides locaux.</p></div>
 <div class="simple-box">
 <img src="../../../Asset/FlexIcons/flower.png" alt="icon">
 <h4>Nature</h4>
@@ -305,7 +302,6 @@ Réservez, partez et vivez l’aventure !</p></div>
 <h4>Navigation</h4><ul>
 <li><a href="./Acceuil.php">Acceuil</a></li>
 <li><a href="./Apropos.php">Apropos</a></li>
-<li><a href="./Evenements.php">Événements</a></li>
 <li><a href="./Galarie.php">Galarie</a></li>
 </ul></div>
 <div class="footer-section">
@@ -340,7 +336,7 @@ Réservez, partez et vivez l’aventure !</p></div>
 <p>📧 contact@rondotime.tn</p>
 <div class="social-icons">
 <a href="https://www.facebook.com"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
-<a href="https://www.instagram.com"><img src="../../../Asset/FlexIcons//instagram.png" alt="Instagram"></a>
+<a href="https://www.instagram.com"><img src="../../../Asset/FlexIcons/instagram.png" alt="Instagram"></a>
 <a href="https://x.com"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
 <a href="https://www.reddit.com"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
 </div></div></div>

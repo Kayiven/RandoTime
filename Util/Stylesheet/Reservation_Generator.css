@@ -1,0 +1,242 @@
+/* --- SLIDER --- */
+.slider {
+  width: 100%;
+  max-width: 1680px;
+  height: 700px;
+  margin: 30px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.active {
+  opacity: 1;
+}
+/* --- INFO SECTION --- */
+.container {
+  max-width: 1400px;
+  margin: auto;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.info-item {
+  flex: 1 1 calc(33% - 20px);
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-item span {
+  display: block;
+  color: #555;
+  font-weight: 500;
+}
+
+.info-item strong {
+  color: #111;
+}
+
+/* --- TRANSPORT --- */
+.transport {
+  margin-top: 30px;
+  padding: 20px;
+  background: #eef5ff;
+  border-radius: 10px;
+}
+
+.transport h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.transport p {
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Search::FilterFlex*/
+.search-container {
+  width: 1341px;
+  margin: 30px auto;
+  z-index: 10;
+  padding: 25px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.person-box {
+  position: absolute;
+  top: 121%;
+  left: 0;
+  background: #ffffff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  width: 221px;
+}
+
+.person-close {
+  margin-bottom: 15px;
+  margin-left: 194px;
+  border-radius: 5px;
+  background: rgb(243, 240, 240);
+  border: 1px solid #252424ad;
+  height: 23px;
+  width: 23px;
+}
+
+/* Search::Tabs */
+.search-tabs {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-fields {
+  display: grid;
+  grid-template-columns: 0.25fr 0.17fr 0.16fr 0.20fr;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+.field-group label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #004a7e;
+}
+
+/* Search::Inputs */
+.search-fields input,
+.search-fields select {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: white;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.counter button {
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 1px solid #252424ad;
+  background: rgb(243, 240, 240);
+  cursor: pointer;
+}
+
+.search-btn {
+  position: absolute;
+  font-size: 17px;
+  width: 250px;
+  height: 50px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  background: #669c24;
+  padding: 13px 0px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 57.5%;
+  margin-top: 15px;
+}
+
+.search-person-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  text-align: left;
+}
+
+.counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 79px;
+  margin-left: 1.1px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* Hover::Groups */
+.search-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.01);
+}
+
+.person-select {
+  position: relative;
+}
+
+.person-box {
+  display: none;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.counter span {
+  min-width: 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.m {
+  color: #004a7e;
+  font-size: 14px;
+}

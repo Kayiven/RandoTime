@@ -109,7 +109,6 @@ Réservez, partez et vivez l’aventure !</p></div>
 <h4>Navigation</h4><ul>
 <li><a href="./Acceuil.php">Acceuil</a></li>
 <li><a href="./Apropos.php">Apropos</a></li>
-<li><a href="./Evenements.php">Événements</a></li>
 <li><a href="./Galarie.php">Galarie</a></li>
 </ul></div>
 <div class="footer-section">

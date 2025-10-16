@@ -2,7 +2,6 @@
 const items = {
 "acceuil": "../../Seassion/Invité/Acceuil.php",
 "apropos": "../../Seassion/Invité/Apropos.php",
-"evenements": "../../Seassion/Invité/evenements.php",
 "galarie": "../../Seassion/Invité/Galarie.php",
 "contact": "../../Seassion/Invité/Contact.php",
 "faq": "../../Seassion/Invité/Faq.php",

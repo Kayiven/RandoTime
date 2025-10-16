@@ -73,7 +73,38 @@ $current_account_id = $_SESSION['id'];
 $stmt = $pdo->prepare("SELECT prenom FROM compte WHERE id = :id LIMIT 1");
 $stmt->execute(['id' => $current_account_id]);
 $prenom = $stmt->fetchColumn();
-?>
+
+$id = $_SESSION['id'];
+$nom = $_SESSION['nom'];
+$prenom = $_SESSION['prenom'];
+$email = $_SESSION['email'];
+
+if (isset($_POST['update_field'])) {
+$field = $_POST['field'];
+$new_value = trim($_POST['new_value']);
+
+if (!empty($new_value)) {
+$allowed_fields = ['nom', 'prenom', 'email'];
+if (in_array($field, $allowed_fields)) {
+$sql = "UPDATE compte SET $field = ? WHERE id = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$new_value, $id]);
+
+// Met à jour la session
+$_SESSION[$field] = $new_value;
+
+// Crée un message temporaire
+$_SESSION['message'] = ucfirst($field) . " mis à jour avec succès ✅";
+
+// Redirection (pour éviter renvoi du form)
+header("Location: " . $_SERVER['PHP_SELF']);
+exit;
+
+}} else {
+$_SESSION['message'] = "Veuillez entrer une valeur valide ⚠️";
+header("Location: " . $_SERVER['PHP_SELF']);
+exit;
+}}?>
 
 <!DOCTYPE HTML>
 <HTML lang="en">
@@ -147,11 +178,48 @@ change se que vous voulez ici, tout à votre Service.
 
 <!-- User info box -->
 <div class="user-info-box">
-<p><strong>Nom :</strong> <?php echo htmlspecialchars($_SESSION['nom']);?></p>
-<p><strong>Prenom :</strong> <?php echo htmlspecialchars($prenom); ?></p>
-<p><strong>Email :</strong> <?php echo htmlspecialchars($_SESSION['email']); ?></p>
-<p><strong>Mot de passe :</strong> ********</p>
+<?php if (!empty($_SESSION['message'])): ?>
+<p id="update-msg" style="color:green;"><?php echo $_SESSION['message']; ?></p>
+<?php unset($_SESSION['message']);?>
+<?php endif; ?>
+
+<!-- NOM -->
+<p><strong>Nom :</strong>
+<span id="text_nom"><?php echo htmlspecialchars($_SESSION['nom']); ?></span>
+<button type="button" class="edit-btn" data-field="nom">Modifier</button>
+<form method="post" class="edit-form" id="form_nom" style="display:none;">
+<input type="text" name="new_value" class="input_style" value="<?php echo htmlspecialchars($_SESSION['nom']); ?>">
+<input type="hidden" name="field" value="nom" class="input_style">
+<button type="submit" name="update_field" class="save-btn">Enregistrer</button>
+<button type="button" class="cancel-btn">Annuler</button>
+</form></p>
+
+<!-- PRENOM -->
+<p><strong>Prénom :</strong>
+<span id="text_prenom"><?php echo htmlspecialchars($prenom); ?></span>
+<button type="button" class="edit-btn" data-field="prenom" >Modifier</button>
+<form method="post" class="edit-form" id="form_prenom" style="display:none;">
+<input type="text" name="new_value" class="input_style" value="<?php echo htmlspecialchars($prenom); ?>">
+<input type="hidden" name="field" value="prenom" class="input_style">
+<button type="submit" name="update_field" class="save-btn">Enregistrer</button>
+<button type="button" class="cancel-btn">Annuler</button>
+</form></p>
+
+<!-- EMAIL -->
+<p><strong>Email :</strong>
+<span id="text_email"><?php echo htmlspecialchars($_SESSION['email']); ?></span>
+<button type="button" class="edit-btn" data-field="email">Modifier</button>
+<form method="post" class="edit-form" id="form_email" style="display:none;">
+<input type="email" name="new_value" class="input_style" value="<?php echo htmlspecialchars($_SESSION['email']); ?>">
+<input type="hidden" name="field" value="email" class="input_style">
+<button type="submit" name="update_field" class="save-btn">Enregistrer</button>
+<button type="button" class="cancel-btn">Annuler</button>
+</form></p>
+
+<!-- MOT DE PASSE (juste affichage, pas modif ici) --><p>
+<strong>Mot de passe :</strong> ********</p>
 </div></div>
+
 
 <!-- Right column: donut chart -->
 <div class="right-column">
@@ -192,17 +260,15 @@ const total_compte = <?= $total_compte ?>;
 Réservez, partez et vivez l’aventure !</p></div>
 <div class="footer-section">
 <h4>Navigation</h4><ul>
-<li><a href="#">Acceuil</a></li>
-<li><a href="#">Apropos</a></li>
-<li><a href="#">Destinations</a></li>
-<li><a href="#">Événements</a></li>
+<li><a href="./Home.php">Acceuil</a></li>
+<li><a href="./About.php">Apropos</a></li>
+<li><a href="./Destination.php">Destinations</a></li>
+<li><a href="./Picture.php">Galarie</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Extension</h4><ul>
-<li><a href="#">Galarie</a></li>
-<li><a href="#">Contact</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">FAQ</a></li>
+<li><a href="./Support.php">Contact</a></li>
+<li><a href="./Question.php">FAQ</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Placement</h4><ul>
@@ -220,20 +286,20 @@ Réservez, partez et vivez l’aventure !</p></div>
 </ul></div>
 <div class="footer-section">
 <h4>Social</h4><ul>
-<li><a href="#">Facebook</a></li>
-<li><a href="#">Instagram</a></li>
-<li><a href="#">twitter</a></li>
-<li><a href="#">Reddit</a></li>
+<li><a href="https://www.facebook.com">Facebook</a></li>
+<li><a href="https://www.instagram.com">Instagram</a></li>
+<li><a href="https://x.com">twitter</a></li>
+<li><a href="https://www.reddit.com">Reddit</a></li>
 </ul></div>
 <div class="footer-contact">
 <h4>Contact</h4>
 <p>📞 +216 90 000 000</p>
 <p>📧 contact@rondotime.tn</p>
 <div class="social-icons">
-<a href="#"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
-<a href="#"><img src="../../../Asset/FlexIcons//instagram.png" alt="Instagram"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
+<a href="https://www.facebook.com"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
+<a href="https://www.instagram.com"><img src="../../../Asset/FlexIcons/instagram.png" alt="Instagram"></a>
+<a href="https://x.com"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
+<a href="https://www.reddit.com"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
 </div></div></div>
 <div class="footer-bottom">
 &copy; 2025 RondoTime. Tous droits réservés.</div></footer>
@@ -242,6 +308,7 @@ Réservez, partez et vivez l’aventure !</p></div>
 <script src="../../../Util/Javascript/dropdown.js"></script>
 <script src="../../../Util/Javascript/datalist1.js"></script>
 <script src="../../../Util/Javascript/char.Js"></script>
+<script src="../../../Util/Javascript/Lisenar_Form.js"></script>
 
 </BODY>
 </HTML>

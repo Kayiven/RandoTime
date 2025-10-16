@@ -1,0 +1,176 @@
+/* --- Dashboard::PROFILE --- */
+.sidebar {
+ width: 401px;
+ background-color: #060606ea;
+ color: white;
+ height: 80vh;
+}
+
+/* Wrapper for sidebar + main content */
+.dashboard-wrapper {
+ display: flex;
+ gap: 30px;
+}
+
+.sidebar h2 {
+ color: #669c24;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ margin-left: 107px;
+ font-size: 25px;
+ margin-top: 140px;
+ margin-bottom: 50px;
+}
+
+.sidebar .category {
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: 18px;
+ cursor: pointer;
+ margin-left: 89px;
+ padding: 10px 20px;
+ font-weight: bold;
+ transition: background 0.3s;
+}
+
+.submenu {
+ font-family: Arial, Helvetica, sans-serif;
+ margin-left: 78px;
+ font-size: 18px;
+}
+
+.submenu a {
+ display: block;
+ padding: 8px 35px;
+ text-decoration: none;
+ color: #d1d5db;
+ transition: background 0.3s;
+}
+
+.submenu a.active {
+ color: #f0811f;
+}
+
+.submenu a:hover {
+ color: #999999;
+}
+
+/* Make content next to sidebar */
+.dashboard-content {
+ width: 70.3%;
+ padding: 20px;
+ overflow: hidden;
+}
+
+/* Scrollable table wrapper */
+.table-wrapper {
+ max-height: 400px;
+ overflow-y: scroll;
+ -ms-overflow-style: none;
+ /* IE and Edge */
+ scrollbar-width: none;
+ /* Firefox */
+ border-radius: 10px;
+ background: white;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide scrollbar for Chrome, Safari, Opera */
+.table-wrapper::-webkit-scrollbar {
+ display: none;
+}
+
+.table-wrapper thead {
+ position: sticky;
+ top: 0;
+ background: #f3f4f6;
+ z-index: 2;
+}
+
+/* Table styling */
+.dashboard-table {
+ width: 100%;
+ border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+ font-family: Arial, Helvetica, sans-serif;
+ padding: 12px 16px;
+ text-align: left;
+}
+
+.dashboard-table th {
+ background: #007bff;
+ color: white;
+}
+
+.dashboard-table tr:hover {
+ background: #f0f7ff;
+}
+
+.title-db{
+ font-family: Arial, Helvetica, sans-serif;
+ margin-bottom: 20px;
+ margin-top: 100px;
+}
+
+
+/* Content next to sidebar */
+.db-content {
+ flex: 1;
+ padding: 0px;
+ border-radius: 10px;
+ min-height: 80vh;
+
+}
+
+/* Title */
+.db-title {
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: 28px;
+ color: #333;
+ margin-left: 20px;
+ margin-top: 120px;
+}
+
+/* Button Forms */
+.db-actions {
+ display: flex;
+ gap: 20px;
+ flex-direction: column;
+ margin-bottom: 30px;
+ margin-top: 20px;
+  margin-left: 20px;
+}
+
+.db-actions p{
+ font-family: Arial, Helvetica, sans-serif;
+ margin-top: 15px;
+ font-size: 20px;
+}
+.db-btn {
+ padding: 12px 20px;
+ font-size: 18px;
+ font-weight: bold;
+ border: none;
+ border-radius: 10px;
+ cursor: pointer;
+ transition: all 0.3s;
+ margin-top: 10PX;
+ color: white;
+}
+
+.db-create {
+ background: #007bff;
+}
+
+.db-create:hover {
+ background: #0056b3;
+}
+
+.db-tables {
+ background: #28a745;
+}
+
+.db-tables:hover {
+ background: #1e7e34;
+}

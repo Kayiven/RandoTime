@@ -42,9 +42,8 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <img src="../../../Asset/Catagories/slider1.png" alt="slider Picture">
 <div class="slide-text">
 <h1>Découvrir Chebika </h1>
-<p>paragraph writing are indispensable parts of any English <br>
-writing comprehension syllabus. From lower grades to upper, all kinds 
-<br>of students.</p></div>
+<p>La rédaction de paragraphes est une partie indispensable <br>de tout programme de
+compréhension écrite en anglais. Des classes inférieures<br> aux classes supérieures,tous types d'élèves.</p></div>
 <div class="borders-on-image">
 <div class="border"></div>
 <div class="border"></div>
@@ -54,9 +53,8 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <img src="../../../Asset/Catagories/slider2.png" alt="slider Picture">
 <div class="slide-text">
 <h1>Découvrir CapBon </h1>
-<p>paragraph writing are indispensable parts of any English <br>
-writing comprehension syllabus. From lower grades to upper, all kinds 
-<br>of students.</p></div>
+<p>La rédaction de paragraphes est une partie indispensable <br>de tout programme de
+compréhension écrite en anglais. Des classes inférieures<br> aux classes supérieures,tous types d'élèves.</p></div>
 <div class="borders-on-image">
 <div class="border"></div>
 <div class="border"></div>
@@ -66,9 +64,8 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <img src="../../../Asset/Catagories/slider3.png" alt="slider Picture">
 <div class="slide-text">
 <h1>Découvrir Dahar </h1>
-<p>paragraph writing are indispensable parts of any English <br>
-writing comprehension syllabus. From lower grades to upper, all kinds 
-<br>of students.</p></div>
+<p>La rédaction de paragraphes est une partie indispensable <br>de tout programme de
+compréhension écrite en anglais. Des classes inférieures<br> aux classes supérieures,tous types d'élèves.</p></div>
 <div class="borders-on-image">
 <div class="border"></div>
 <div class="border"></div>
@@ -90,8 +87,8 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <input type="date" id="depart" name="date_start">
 </div>
 <div class="field-group">
-<label for="Price">Prix maximum</label>
-<input type="text" id="Price" name="price" id="Price" placeholder="Mettre ton prix">
+<label for="Price">Prix</label>
+<input type="text" id="Price" name="price" id="Price" placeholder="Prix Maximum">
 </div>
 <div class="field-group">
 <label>Voyageurs</label>
@@ -128,7 +125,7 @@ writing comprehension syllabus. From lower grades to upper, all kinds
 <div class="simple-box">
 <img src="../../../Asset/FlexIcons/localisaton.png" alt="icon">
 <h4>Randonnées</h4>
-<p>Explore avec des guides locaux.</p></div>
+<p>Explorez avec des guides locaux.</p></div>
 <div class="simple-box">
 <img src="../../../Asset/FlexIcons/flower.png" alt="icon">
 <h4>Nature</h4>
@@ -326,17 +323,15 @@ alt="<?= htmlspecialchars($p['nom']) ?>">
 Réservez, partez et vivez l’aventure !</p></div>
 <div class="footer-section">
 <h4>Navigation</h4><ul>
-<li><a href="#">Acceuil</a></li>
-<li><a href="#">Apropos</a></li>
-<li><a href="#">Destinations</a></li>
-<li><a href="#">Événements</a></li>
+<li><a href="./Home.php">Acceuil</a></li>
+<li><a href="./About.php">Apropos</a></li>
+<li><a href="./Destination.php">Destinations</a></li>
+<li><a href="./Picture.php">Galarie</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Extension</h4><ul>
-<li><a href="#">Galarie</a></li>
-<li><a href="#">Contact</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">FAQ</a></li>
+<li><a href="./Support.php">Contact</a></li>
+<li><a href="./Question.php">FAQ</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Placement</h4><ul>
@@ -354,20 +349,20 @@ Réservez, partez et vivez l’aventure !</p></div>
 </ul></div>
 <div class="footer-section">
 <h4>Social</h4><ul>
-<li><a href="#">Facebook</a></li>
-<li><a href="#">Instagram</a></li>
-<li><a href="#">twitter</a></li>
-<li><a href="#">Reddit</a></li>
+<li><a href="https://www.facebook.com">Facebook</a></li>
+<li><a href="https://www.instagram.com">Instagram</a></li>
+<li><a href="https://x.com">twitter</a></li>
+<li><a href="https://www.reddit.com">Reddit</a></li>
 </ul></div>
 <div class="footer-contact">
 <h4>Contact</h4>
 <p>📞 +216 90 000 000</p>
 <p>📧 contact@rondotime.tn</p>
 <div class="social-icons">
-<a href="#"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
-<a href="#"><img src="../../../Asset/FlexIcons//instagram.png" alt="Instagram"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
+<a href="https://www.facebook.com"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
+<a href="https://www.instagram.com"><img src="../../../Asset/FlexIcons/instagram.png" alt="Instagram"></a>
+<a href="https://x.com"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
+<a href="https://www.reddit.com"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
 </div></div></div>
 <div class="footer-bottom">
 &copy; 2025 RondoTime. Tous droits réservés.</div></footer>

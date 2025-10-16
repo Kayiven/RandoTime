@@ -46,13 +46,13 @@
  font-family: Verdana, Geneva, Tahoma, sans-serif;
  gap: 20px;
  align-items: center;
- margin-left: 609.7px;
+ margin-left: 651.1px;
 }
 .list-v001 {
  display: flex;
  flex-direction: column;
  padding-top: 24px;
- margin-left: 38px;
+ margin-left: 55px;
  gap: 8px;
  font-size: 18px;
  color: black;
@@ -82,6 +82,9 @@
 .Parametre:hover {
  background-color: rgba(86, 131, 31, 0.843);
 }
+.Dashboard:hover {
+ background-color: rgba(86, 131, 31, 0.843);
+}
 .Disconnect:hover {
  background-color: rgba(86, 131, 31, 0.843);
 }
@@ -99,9 +102,9 @@
  background-color: #141414;
  border-bottom-right-radius: 5px;
  border-bottom-left-radius: 5px;
- margin-left: 35.6%;
+ margin-left: 32.54%;
  margin-top: 0px;
- height: 102Px;
+ height: 72Px;
  width: 145px;
  z-index: 19;
 }
@@ -111,9 +114,9 @@
  background-color: #141414;
  border-bottom-right-radius: 5px;
  border-bottom-left-radius: 5px;
- margin-left: 42%;
+ margin-left: 38.91%;
  margin-top: 0px;
- height: 102Px;
+ height: 72Px;
  width: 145px;
  z-index: 19;
 }
@@ -174,7 +177,7 @@ font-size: 14px;
  border: 1px solid #ccc;
  border-top: none;
  background: white;
- max-height: 180px;
+ max-height: 212px;
  display: none;
  border-radius: 0 0 6px 6px;
  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -194,9 +197,9 @@ font-size: 14px;
  background-color: #141414;
  border-bottom-right-radius: 5px;
  border-bottom-left-radius: 5px;
- margin-left: 80.4%;
+ margin-left: 79.94%;
  margin-top: 0px;
- height: 235Px;
+ height: 250Px;
  width: 273px;
  z-index: 19;
 }
@@ -228,10 +231,10 @@ font-size: 14px;
  background-color: #669c24;
  border-radius: 5px;
  margin-left: 20px;
- margin-top: 30px;
+ margin-top: 10px;
  transition: background 0.3s;
  width: 230px;
- height: 29px;
+ height: 27px;
 }
 .Disconnect{
  color: white;
@@ -245,7 +248,33 @@ font-size: 14px;
  margin-top: 10px;
  transition: background 0.3s;
  width: 230px;
- height: 29px;
+ height: 27px;
+}
+.Dashboard{
+ color: white;
+ border: none;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 14px;
+ font-weight: 600;
+ background-color: #669c24;
+ border-radius: 5px;
+ margin-left: 20px;
+ margin-top: 18px;
+ transition: background 0.3s;
+ width: 230px;
+ height: 27px;
+}
+.no-dashboard{
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 14px;
+ font-weight: 600;
+ margin-left: 68px;
+ margin-top: 18px;
+ width: 230px;
+ height: 27px;
+ cursor: pointer;
+ -webkit-user-drag: none;
+ user-select: none;
 }
 .seasion-pic{
  border-radius: 3px;

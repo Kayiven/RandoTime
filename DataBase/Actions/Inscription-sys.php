@@ -22,20 +22,20 @@ $date = sprintf('%04d-%02d-%02d', $year, $month, $day);
 
 // Password verification
 if ($password !== $password_confirm) {
-$_SESSION['error-pwd'] = "Error > Password doesn't match with other password";
+$_SESSION['error-pwd'] = "Error > Mot de passe ne correspond pas avec l'autre";
 header("Location: ../../Views/Seassion/Invité/Inscription.php");
 exit;
 }
 
 // Email syntax verification
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-$_SESSION['error-email'] = "Error > Email is invalid!";
+$_SESSION['error-email'] = "Error > L'e-mail est invalide!";
 header("Location: ../../Views/Seassion/Invité/Inscription.php");
 exit;
 }
 
 if (strlen($password) !== 16) {
-$_SESSION['error-pwd'] = "Error > Le mot doit contenir 16 caractères.";
+$_SESSION['error-pwd'] = "Error > Le mot de pass doit contenir 16 caractères.";
 header("Location: ../../Views/Seassion/Invité/Inscription.php");
 exit;
 }
@@ -50,20 +50,20 @@ $stmt->execute([$email, $nom, $prenom, $telephone]);
 $existing = $stmt->fetch();
 
 if ($existing) {
-if ($existing['email'] === $email) $_SESSION['error-email'] = "Error > Email already exists!";
-if ($existing['nom'] === $nom) $_SESSION['error-nom'] = "Error > Name already exists!";
-if ($existing['prenom'] === $prenom) $_SESSION['error-prenom'] = "Error > Prenom already exists!";
-if ($existing['telephone'] == $telephone) $_SESSION['error-phone'] = "Error > Phone number already exists!";
+if ($existing['email'] === $email) $_SESSION['error-email'] = "Error > Email déjà exists!";
+if ($existing['nom'] === $nom) $_SESSION['error-nom'] = "Error > Name déjà exists!";
+if ($existing['prenom'] === $prenom) $_SESSION['error-prenom'] = "Error > Prenom déjà exists!";
+if ($existing['telephone'] == $telephone) $_SESSION['error-phone'] = "Error > Phone number déjà exists!";
 
 // Message général d’échec
-$_SESSION['Failed'] = "Error > le compte failed a inscrire !";
+$_SESSION['Failed'] = "Error > le compte a échoué a l'inscrire !";
 header("Location: ../../Views/Seassion/Invité/Inscription.php");
 exit;
 }
 
 // Insertion dans la DB
 $stmt = $pdo->prepare("INSERT INTO compte
-(id, nom, prenom, email, birthday, telephone, gender, role, motpass, profile_pic)
+(id, nom, prenom, email, birthday, telephone, gender, role, motpass, photo)
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 if ($stmt->execute([$userId, $nom, $prenom, $email, $date, $telephone, $gender, $role, $passwordHash, $profile_pic])) {
@@ -72,7 +72,7 @@ $_SESSION['nom'] = $nom;
 $_SESSION['email'] = $email;
 session_regenerate_id(true);
 
-$_SESSION['success'] = "⭐ Your account has been created successfully!";
+$_SESSION['success'] = "⭐ Votre compte a été créé avec succès!";
 header("Location: ../../Views/Seassion/Invité/Login.php");
 exit;
 

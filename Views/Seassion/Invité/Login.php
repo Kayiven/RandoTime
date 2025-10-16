@@ -25,8 +25,8 @@
 
 <!-- Formulaire of login  -->
 <div class="login_formulaire">
-<div class="text_1">Welcome To</div>
-<div class="text_2">The Login</div>
+<div class="text_1">Bienvenu Sur</div>
+<div class="text_2">La Connexion</div>
 <form action="../../../DataBase/Actions/login-in-sys.php" method="post">
 <label class="label">Username / Email</label>
 <input type="text" name="username" placeholder="Sasir votre username/email">
@@ -34,14 +34,14 @@
 <label class="label">Password</label>
 <input type="password" name="password" placeholder="Sasir votre password">
 <div class="login-pwd-error"><?= isset($_SESSION['login-pwd-error']) ? htmlspecialchars($_SESSION['login-pwd-error']) : '' ?></div>
-<a href="./Oublier.php" class="Forget">Did you forget you pasword ?</a>
+<a href="./Oublier.php" class="Forget">As-tu oublié ton mot de passe ?</a>
 <button type="submit" class="connection">Connexion</button>
 <button type="submit" class="Creation" formaction="../Invité/Inscription.php">Cree votre compte</button>
 </form>
 
 <!-- Social login -->
 <div class="social-login">
-<div class="divider"><span>Ou Login avec</span></div>
+<div class="divider"><span>Ou Connexion avec</span></div>
 <div class="social-buttons">
 <button class="reddit" onclick="window.location.href='https://www.reddit.com/login'">
 <img src="../../../Asset/FlexIcons/reddit.png" alt="reddit">Reddit</button>
@@ -64,7 +64,6 @@ Réservez, partez et vivez l’aventure !</p></div>
 <h4>Navigation</h4><ul>
 <li><a href="./Acceuil.php">Acceuil</a></li>
 <li><a href="./Apropos.php">Apropos</a></li>
-<li><a href="./Evenements.php">Événements</a></li>
 <li><a href="./Galarie.php">Galarie</a></li>
 </ul></div>
 <div class="footer-section">

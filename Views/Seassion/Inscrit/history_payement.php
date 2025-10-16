@@ -70,52 +70,48 @@ $payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div></div>
 
 <!-- Main -->
-  <div class="main-content">
-    <h1>History Payements</h1>
-     <!-- Stats --> 
-      <div class="stats-container">
-        <div class="stat-card"> <h3>Total Payments</h3>
-         <p><?= $stats['total_payments']; ?></p>
-         </div> 
-         <div class="stat-card"> 
-          <h3>Total Amount</h3> 
-          <p><?= number_format($stats['total_amount'], 2); ?> TND</p>
-          </div> </div> 
-               <!-- Table --> 
+<div class="main-content">
+<h1>History Payements</h1>
+<!-- Stats --> 
+<div class="stats-container">
+<div class="stat-card"> <h3>Total Payments</h3>
+<p><?= $stats['total_payments']; ?></p>
+</div> 
+<div class="stat-card"> 
+<h3>Total Amount</h3> 
+<p><?= number_format($stats['total_amount'], 2); ?> TND</p>
+</div> </div> 
+<!-- Table --> 
 <div class="table-container">
-  <h2>Recent Payments</h2>
-  <div class="table-scroll">
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Localisation</th>
-          <th>Method</th>
-          <th>Price (TND)</th>
-          <th>Status</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php if ($payments): ?>
-          <?php foreach ($payments as $payment): ?>
-            <tr>
-              <td><?= htmlspecialchars($payment['id']); ?></td>
-              <td><?= htmlspecialchars($payment['localisation']); ?></td>
-              <td><?= htmlspecialchars($payment['payment_method']); ?></td>
-              <td><?= number_format($payment['price'], 2); ?></td>
-              <td><?= htmlspecialchars($payment['status']); ?></td>
-              <td><?= htmlspecialchars($payment['created_at']); ?></td>
-            </tr>
-          <?php endforeach; ?>
-        <?php else: ?>
-          <tr>
-            <td colspan="6" style="text-align:center;">No payments found</td>
-          </tr>
-        <?php endif; ?>
-      </tbody>
-    </table>
-  </div>
+<h2>Recent Payments</h2>
+<div class="table-scroll">
+<table>
+<thead><tr>
+<th>ID</th>
+<th>Localisation</th>
+<th>Method</th>
+<th>Price (TND)</th>
+<th>Status</th>
+<th>Date</th>
+</tr></thead>
+<tbody>
+<?php if ($payments): ?>
+<?php foreach ($payments as $payment): ?>
+<tr>
+<td><?= htmlspecialchars($payment['id']); ?></td>
+<td><?= htmlspecialchars($payment['localisation']); ?></td>
+<td><?= htmlspecialchars($payment['payment_method']); ?></td>
+<td><?= number_format($payment['price'], 2); ?></td>
+<td><?= htmlspecialchars($payment['status']); ?></td>
+<td><?= htmlspecialchars($payment['created_at']); ?></td>
+</tr>
+<?php endforeach; ?>
+<?php else: ?>
+<tr>
+<td colspan="6" style="text-align:center;">No payments found</td>
+</tr>
+<?php endif; ?>
+</tbody></table></div>
 </div></div>
 
 <!-- Footer -->
@@ -127,17 +123,15 @@ $payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 Réservez, partez et vivez l’aventure !</p></div>
 <div class="footer-section">
 <h4>Navigation</h4><ul>
-<li><a href="#">Acceuil</a></li>
-<li><a href="#">Apropos</a></li>
-<li><a href="#">Destinations</a></li>
-<li><a href="#">Événements</a></li>
+<li><a href="./Home.php">Acceuil</a></li>
+<li><a href="./About.php">Apropos</a></li>
+<li><a href="./Destination.php">Destinations</a></li>
+<li><a href="./Picture.php">Galarie</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Extension</h4><ul>
-<li><a href="#">Galarie</a></li>
-<li><a href="#">Contact</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">FAQ</a></li>
+<li><a href="./Support.php">Contact</a></li>
+<li><a href="./Question.php">FAQ</a></li>
 </ul></div>
 <div class="footer-section">
 <h4>Placement</h4><ul>
@@ -155,20 +149,20 @@ Réservez, partez et vivez l’aventure !</p></div>
 </ul></div>
 <div class="footer-section">
 <h4>Social</h4><ul>
-<li><a href="#">Facebook</a></li>
-<li><a href="#">Instagram</a></li>
-<li><a href="#">twitter</a></li>
-<li><a href="#">Reddit</a></li>
+<li><a href="https://www.facebook.com">Facebook</a></li>
+<li><a href="https://www.instagram.com">Instagram</a></li>
+<li><a href="https://x.com">twitter</a></li>
+<li><a href="https://www.reddit.com">Reddit</a></li>
 </ul></div>
 <div class="footer-contact">
 <h4>Contact</h4>
 <p>📞 +216 90 000 000</p>
 <p>📧 contact@rondotime.tn</p>
 <div class="social-icons">
-<a href="#"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
-<a href="#"><img src="../../../Asset/FlexIcons//instagram.png" alt="Instagram"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
-<a href="#"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
+<a href="https://www.facebook.com"><img src="../../../Asset/FlexIcons/Facebook.png" alt="Facebook"></a>
+<a href="https://www.instagram.com"><img src="../../../Asset/FlexIcons/instagram.png" alt="Instagram"></a>
+<a href="https://x.com"><img src="../../../Asset/FlexIcons/gmail.png" alt="Gmail"></a>
+<a href="https://www.reddit.com"><img src="../../../Asset/FlexIcons/reddit.png" alt="Reddit"></a>
 </div></div></div>
 <div class="footer-bottom">
 &copy; 2025 RondoTime. Tous droits réservés.</div></footer>
